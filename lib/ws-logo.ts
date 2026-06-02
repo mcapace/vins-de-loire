@@ -10,11 +10,17 @@
 export const WS_LOGO_PRIMARY_SRC =
   "/logos/wine-spectator/wine-spectator-primary.png";
 
-/** Shared cap-height for Vins de Loire × Wine Spectator lockups (both marks use the same px height). */
+/** Wine Spectator wordmark height in lockups. */
 export const COBRAND_LOGO_HEIGHT = {
   sm: 24,
   md: 28,
   lg: 32,
 } as const;
+
+/**
+ * Loire PNG has generous padding; scale up so it reads equal to the WS wordmark.
+ * (Visit Napa Valley hub uses a slightly taller partner mark than WS.)
+ */
+export const LOIRE_LOGO_SCALE = 1.55;
 
 export type CoBrandLogoSize = keyof typeof COBRAND_LOGO_HEIGHT;
