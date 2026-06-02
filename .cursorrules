@@ -1,0 +1,25 @@
+# Project: Vins de Loire Sponsored Landing Page
+
+## What this is
+A sponsored editorial landing page for Vins de Loire (InterLoire), hosted on a
+Wine Spectator domain. Wine Spectator is the publisher; Vins de Loire is the
+paying sponsor. The page showcases recent Wine Spectator scores/ratings for
+Loire Valley wines, framed in WS editorial style with Vins de Loire branding.
+
+## Stack
+- Next.js (App Router), TypeScript, Tailwind CSS
+- Deployed to Vercel
+- Static/SSG where possible (it's a marketing landing page)
+
+## Design intent
+- Cinematic, editorial, premium. Generous whitespace, large imagery, refined type.
+- Respect the Vins de Loire / InterLoire brand book: public/brand/GS GI 0203 - INTERLOIRE BrandBook V6.pdf
+  (colors, logo clear space, typography). Pull exact hex values and fonts from it.
+- This is a co-branded page: Wine Spectator editorial authority + Vins de Loire identity.
+
+## Rules
+- All copy comes from src/content/CONTENT_SOURCE.docx. Do not invent marketing copy.
+- All images live in public/images, logos in public/logos. Use real filenames.
+- Mobile-first responsive. Test at 375px, 768px, 1440px.
+- Accessible: alt text on all images, semantic HTML, proper heading order.
+- No em dashes in any copy or comments. Use commas, colons, parentheses, or separate sentences.

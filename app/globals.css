@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1d2b50;
+}
+
+@theme {
+  /* Vins de Loire primary blues */
+  --color-loire-blue-deep: #1d2b50;
+  --color-loire-blue: #27316c;
+  --color-loire-blue-alt: #26358c;
+  --color-loire-blue-mid: #3d4f9d;
+  --color-loire-blue-secondary: #4f60a9;
+  --color-loire-blue-light: #9aa3d3;
+  --color-loire-blue-pale: #b8bde1;
+  --color-loire-blue-faint: #c8cbe8;
+
+  /*
+   * Complementary palette: illustrations, social, digital accents only.
+   * Use sparingly, not as primary UI surfaces.
+   */
+  --color-loire-accent-cream: #eddcce;
+  --color-loire-accent-sage: #9dcab9;
+  --color-loire-accent-forest: #2e504e;
+  --color-loire-accent-gold: #ddb543;
+  --color-loire-accent-amber: #c98d17;
+  --color-loire-accent-rose: #d28db0;
+  --color-loire-accent-wine: #803630;
+  --color-loire-accent-peach: #eb865f;
+  --color-loire-accent-orange: #e5512b;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-hero-scroll: hero-scroll 2s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@keyframes hero-scroll {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0.5rem);
+    opacity: 0.5;
+  }
+}
