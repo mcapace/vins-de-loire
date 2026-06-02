@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-// import localFont from "next/font/local";
+import SiteProviders from "@/components/SiteProviders";
+import {
+  faviconPath,
+  getSiteUrl,
+  ogImagePath,
+  siteDescription,
+  siteName,
+  siteTitle,
+} from "@/lib/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,51 +18,45 @@ const poppins = Poppins({
   display: "swap",
 });
 
-// Licensed Proxima Nova (brand book primary). Drop .woff2 files into public/fonts/
-// then uncomment and swap body className to use proximaNova.variable instead.
-//
-// const proximaNova = localFont({
-//   src: [
-//     {
-//       path: "../public/fonts/ProximaNova-Light.woff2",
-//       weight: "300",
-//       style: "normal",
-//     },
-//     {
-//       path: "../public/fonts/ProximaNova-Regular.woff2",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "../public/fonts/ProximaNova-Medium.woff2",
-//       weight: "500",
-//       style: "normal",
-//     },
-//     {
-//       path: "../public/fonts/ProximaNova-Semibold.woff2",
-//       weight: "600",
-//       style: "normal",
-//     },
-//     {
-//       path: "../public/fonts/ProximaNova-Bold.woff2",
-//       weight: "700",
-//       style: "normal",
-//     },
-//     {
-//       path: "../public/fonts/ProximaNova-Extrabold.woff2",
-//       weight: "800",
-//       style: "normal",
-//     },
-//   ],
-//   variable: "--font-proxima-nova",
-//   display: "swap",
-// });
-//
-// In globals.css @theme, point --font-sans and --font-display to var(--font-proxima-nova).
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  title: "Vins de Loire",
-  description: "Loire Wines and Wine Spectator",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: ogImagePath,
+        width: 2400,
+        height: 1600,
+        alt: "Loire Valley vineyards at golden hour",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImagePath],
+  },
+  icons: {
+    icon: [{ url: faviconPath, type: "image/png" }],
+    apple: [{ url: faviconPath, type: "image/png" }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -64,7 +66,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <SiteProviders />
+      </body>
     </html>
   );
 }

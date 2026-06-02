@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionContainer from "@/components/SectionContainer";
 import { sectionPaddingCompact } from "@/lib/section";
+import { sponsorDisclosure } from "@/lib/site";
 
 const VINS_DE_LOIRE_LOGO =
   "/logos/Logo-Vins-de-Loire-Bleu/Logo-Vins-de-Loire-BLEU.png";
@@ -38,8 +39,11 @@ export default function Footer() {
           </p>
         </div>
 
-        <p className="mt-10 max-w-3xl text-center text-sm leading-relaxed text-loire-blue-pale sm:mt-12 sm:text-left sm:text-base">
-          Sponsored content presented by Vins de Loire
+        <p
+          className="mt-10 max-w-3xl text-center text-sm leading-relaxed text-loire-blue-pale sm:mt-12 sm:text-left sm:text-base"
+          data-legal-review="pending"
+        >
+          {sponsorDisclosure}
           <span className="mt-2 block text-xs uppercase tracking-[0.14em] text-loire-blue-light">
             Legal review pending
           </span>
