@@ -36,6 +36,8 @@
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia,
     "Times New Roman", serif;
+  --font-stat: var(--font-bodoni), "Bodoni Moda", "Didot", "Bodoni 72",
+    Georgia, serif;
 
   --animate-ken-burns: ken-burns 28s ease-in-out infinite alternate;
 }
@@ -113,6 +115,13 @@ body {
 .font-display {
   font-family: var(--font-display);
   font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Luxury figures: didone numerals, separate from editorial Cormorant */
+.font-stat {
+  font-family: var(--font-stat);
+  font-feature-settings: "kern" 1, "liga" 1, "lnum" 1, "tnum" 1;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 @keyframes ken-burns {

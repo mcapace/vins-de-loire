@@ -7,8 +7,7 @@ import { typeBodyDark, typeButton, typeHero } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
-const HERO_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-47.jpg";
+import { siteImages } from "@/lib/site-images";
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
@@ -26,8 +25,8 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <MoodyImage
-            src={HERO_IMAGE}
-            alt="Panoramic Loire Valley vineyards at golden hour, wide landscape view"
+            src={siteImages.hero.src}
+            alt={siteImages.hero.alt}
             fill
             priority
             sizes="100vw"
@@ -46,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl text-left"
         >
-          <CoBrandLockup variant="on-dark" size="lg" priority />
+          <CoBrandLockup variant="on-dark" size="xl" priority />
 
           <h1 className={`text-shadow-hero mt-8 ${typeHero}`}>
             The Wines of a Lifetime

@@ -17,24 +17,25 @@ export const typeDisplayDark =
 export const typeHero =
   "font-display text-4xl font-medium leading-[1.02] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]";
 
-/** Stat figures — airy serif numerals, not heavy bold */
+/** Stat figures — didone numerals (Bodoni Moda), distinct from headline serif */
 export const typeStatLight =
-  "font-display text-4xl font-light tabular-nums leading-none tracking-[0.01em] text-loire-blue-deep sm:text-5xl lg:text-6xl";
+  "font-stat text-[2.5rem] font-normal leading-[0.92] tracking-[-0.04em] text-loire-blue-deep sm:text-6xl lg:text-7xl";
 
 export const typeStatDark =
-  "font-display text-4xl font-light tabular-nums leading-none tracking-[0.01em] text-white sm:text-5xl lg:text-6xl";
+  "font-stat text-[2.5rem] font-normal leading-[0.92] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl";
 
+/** Proof strip & sustainability tiles — mixed numerals + short text */
 export const typeStatCompact =
-  "font-display text-3xl font-light tabular-nums leading-none tracking-[0.01em] text-loire-blue-deep sm:text-4xl";
+  "font-stat text-[1.65rem] font-normal leading-[1] tracking-[-0.03em] text-loire-blue-deep sm:text-[2.125rem]";
 
 export const typeStatLabelLight =
-  "font-sans text-[11px] font-normal uppercase tracking-[0.26em] text-loire-blue-mid sm:text-xs";
+  "font-sans text-[13px] font-normal normal-case leading-snug tracking-[0.02em] text-loire-blue/90 sm:text-sm";
 
 export const typeStatLabelDark =
-  "font-sans text-sm font-light leading-relaxed tracking-[0.01em] text-white/85 sm:text-base";
+  "font-sans text-sm font-normal normal-case leading-relaxed text-white/75 sm:text-[0.9375rem]";
 
 export const typeStatCaptionLight =
-  "font-sans text-sm font-light leading-relaxed text-loire-blue-deep/85 sm:text-base";
+  "font-sans text-sm font-normal normal-case leading-relaxed text-loire-blue-deep/80 sm:text-[0.9375rem]";
 
 export const typeBodyLight =
   "font-sans text-base font-light leading-relaxed text-loire-blue-deep sm:text-lg";
@@ -53,7 +54,7 @@ export const typeCaptionDark =
 
 /** WS score badge numerals */
 export const typeScore =
-  "font-display text-5xl font-light tabular-nums leading-none tracking-[-0.02em] sm:text-6xl";
+  "font-stat text-5xl font-normal leading-none tracking-[-0.04em] sm:text-6xl";
 
 export const typeScoreLabel =
   "font-sans text-[10px] font-normal uppercase tracking-[0.32em] text-loire-blue-mid sm:text-xs";

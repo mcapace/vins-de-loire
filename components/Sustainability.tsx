@@ -13,8 +13,7 @@ import {
   typeStatCompact,
 } from "@/lib/typography";
 
-const SUSTAINABILITY_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-16.jpg";
+import { siteImages } from "@/lib/site-images";
 
 export default function Sustainability() {
   return (
@@ -27,8 +26,8 @@ export default function Sustainability() {
         <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
           <Reveal className="relative aspect-[4/3] w-full min-w-0 overflow-hidden lg:col-span-6 lg:aspect-[5/4]">
             <MoodyImage
-              src={SUSTAINABILITY_IMAGE}
-              alt="Sustainable Loire vineyard rows with green cover crops between vines"
+              src={siteImages.sustainability.src}
+              alt={siteImages.sustainability.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -67,7 +66,7 @@ export default function Sustainability() {
 
             <div className="mt-10 grid min-w-0 grid-cols-2 gap-4 sm:mt-12 sm:gap-6">
               <div className="rounded-sm bg-loire-accent-sage/25 px-4 py-6 transition-colors duration-200 hover:bg-loire-accent-sage/35 sm:px-6 sm:py-8">
-                <p className={`${typeStatCompact} sm:text-5xl`}>85%</p>
+                <p className={typeStatCompact}>85%</p>
                 <p className={`mt-4 ${typeStatCaptionLight}`}>
                   Vineyards certified organic or environmentally sustainable
                   today
@@ -75,9 +74,7 @@ export default function Sustainability() {
               </div>
 
               <div className="rounded-sm border border-loire-accent-forest/30 bg-loire-accent-sage/15 px-4 py-6 transition-colors duration-200 hover:border-loire-accent-forest/50 sm:px-6 sm:py-8">
-                <p
-                  className={`${typeStatCompact} text-loire-accent-forest sm:text-5xl`}
-                >
+                <p className={`${typeStatCompact} text-loire-accent-forest`}>
                   2030
                 </p>
                 <p className={`mt-4 ${typeStatCaptionLight}`}>

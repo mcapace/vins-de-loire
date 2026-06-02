@@ -7,10 +7,8 @@ import {
   spaceHeadlineToBody,
 } from "@/lib/section";
 import CoBrandLockup from "@/components/CoBrandLockup";
+import { siteImages } from "@/lib/site-images";
 import Link from "next/link";
-
-const HUB_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-21.jpg";
 
 const hubHighlights = [
   "Recent Wine Spectator ratings from Loire Valley editor Kristen Bieler",
@@ -73,8 +71,8 @@ export default function TradePortalHub() {
           <Reveal className="min-w-0 lg:col-span-6" delay={1}>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-loire-blue-pale/20 shadow-2xl lg:aspect-[5/4]">
               <MoodyImage
-                src={HUB_IMAGE}
-                alt="Loire Valley trade professionals tasting wines in the vineyard"
+                src={siteImages.planner.trade.src}
+                alt={siteImages.planner.trade.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 overlayClassName="moody-overlay"

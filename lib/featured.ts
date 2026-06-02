@@ -1,3 +1,5 @@
+import { siteImages } from "@/lib/site-images";
+
 export type FeaturedCard = {
   id: string;
   category: string;
@@ -15,9 +17,9 @@ export const featuredCards: FeaturedCard[] = [
     title: "Two millennia in the making",
     excerpt:
       "How the river shaped a bridge between UNESCO landscapes, singular terroirs, and wines of remarkable contrast.",
-    image: "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-28.jpg",
+    image: siteImages.featured.bridge.src,
     href: "#manifesto",
-    imageAlt: "Loire vineyard slopes along the river corridor",
+    imageAlt: siteImages.featured.bridge.alt,
   },
   {
     id: "grapes",
@@ -25,9 +27,9 @@ export const featuredCards: FeaturedCard[] = [
     title: "Six expressions of one river",
     excerpt:
       "Chenin, Cabernet Franc, Sauvignon, Melon Blanc, rosé, and fines bulles: the identities trade professionals meet most on the list.",
-    image: "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-35.jpg",
+    image: siteImages.featured.grapes.src,
     href: "#grapes",
-    imageAlt: "Sancerre-style Sauvignon Blanc vineyards in the Loire",
+    imageAlt: siteImages.featured.grapes.alt,
   },
   {
     id: "territories",
@@ -35,8 +37,8 @@ export const featuredCards: FeaturedCard[] = [
     title: "Four territories, one journey",
     excerpt:
       "From Atlantic freshness in the Nantais to inland depth in Centre-Loire, explore the Loire Océanique to the Loire Volcanique.",
-    image: "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-46.jpg",
+    image: siteImages.featured.territories.src,
     href: "#territories",
-    imageAlt: "Inland Loire vineyards toward the volcanic heart of France",
+    imageAlt: siteImages.featured.territories.alt,
   },
 ];

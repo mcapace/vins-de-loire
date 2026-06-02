@@ -70,7 +70,7 @@ export default function Territories() {
               <article className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-loire-blue-faint shadow-md transition-shadow duration-300 hover:shadow-xl">
                 <MoodyImage
                   src={territory.image}
-                  alt={`${territory.name} vineyards in the Loire Valley`}
+                  alt={territory.imageAlt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   overlayClassName="moody-overlay"

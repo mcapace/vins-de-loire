@@ -1,3 +1,5 @@
+import { siteImages } from "@/lib/site-images";
+
 /** Site-wide config for metadata, analytics, and absolute URLs */
 
 export const siteName = "Vins de Loire";
@@ -18,7 +20,7 @@ export function getSiteUrl(): string {
 }
 
 export const ogImagePath =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-47.jpg";
+  siteImages.hero.src;
 
 export const faviconPath =
   "/logos/Logo-Vins-de-Loire-Bleu/Logo-Vins-de-Loire-BLEU.png";

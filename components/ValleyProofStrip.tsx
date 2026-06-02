@@ -25,7 +25,7 @@ export default function ValleyProofStrip() {
               className="text-center lg:border-l lg:border-loire-blue-pale/40 lg:pl-8 lg:text-left first:lg:border-l-0 first:lg:pl-0"
             >
               <p className={typeStatCompact}>{stat.value}</p>
-              <p className={`mt-3 ${typeStatLabelLight}`}>{stat.label}</p>
+              <p className={`mt-4 ${typeStatLabelLight}`}>{stat.label}</p>
             </li>
           ))}
         </ul>

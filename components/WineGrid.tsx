@@ -15,8 +15,7 @@ import {
   typeScoreLabel,
 } from "@/lib/typography";
 
-const RATINGS_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-50.jpg";
+import { siteImages } from "@/lib/site-images";
 
 const colorLabels: Record<WineColor, string> = {
   white: "White",
@@ -78,8 +77,8 @@ function RatingsComingSoon() {
     <div className="mt-12 grid min-w-0 gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-5 lg:aspect-auto lg:min-h-[320px]">
         <MoodyImage
-          src={RATINGS_IMAGE}
-          alt="Sparkling Loire wines in the glass, fines bulles"
+          src={siteImages.ratingsEmpty.src}
+          alt={siteImages.ratingsEmpty.alt}
           fill
           sizes="(max-width: 1024px) 100vw, 40vw"
         />

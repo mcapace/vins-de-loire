@@ -68,7 +68,7 @@ export default function GrapesStyles() {
                 <div className="relative aspect-[4/3] w-full">
                   <MoodyImage
                     src={card.image}
-                    alt={`${card.name} vineyards in the Loire Valley`}
+                    alt={card.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />

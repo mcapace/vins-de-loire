@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Bodoni_Moda, Cormorant_Garamond, Jost } from "next/font/google";
 import SiteProviders from "@/components/SiteProviders";
 import {
   faviconPath,
@@ -15,6 +15,13 @@ const jost = Jost({
   variable: "--font-jost",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
+  display: "swap",
+});
+
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -75,7 +82,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jost.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${jost.variable} ${cormorant.variable} ${bodoni.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}

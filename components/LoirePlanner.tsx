@@ -22,8 +22,7 @@ import {
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
-const PLANNER_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-21.jpg";
+import { siteImages } from "@/lib/site-images";
 
 function TradePanel() {
   return (
@@ -49,8 +48,8 @@ function TradePanel() {
       </div>
       <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-6 lg:aspect-[5/4]">
         <MoodyImage
-          src={PLANNER_IMAGE}
-          alt="Loire trade tasting in the vineyard"
+          src={siteImages.planner.trade.src}
+          alt={siteImages.planner.trade.alt}
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
@@ -94,8 +93,8 @@ function RatingsPanel() {
     <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-5 lg:min-h-[280px] lg:aspect-auto">
         <MoodyImage
-          src="/images/InterLoire-Vins-de-Loire-gaellebcphotographe-50.jpg"
-          alt="Sparkling Loire wines in glass"
+          src={siteImages.planner.ratings.src}
+          alt={siteImages.planner.ratings.alt}
           fill
           sizes="40vw"
         />

@@ -8,8 +8,7 @@ import {
 } from "@/lib/section";
 import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
 
-const MANIFESTO_IMAGE =
-  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-28.jpg";
+import { siteImages } from "@/lib/site-images";
 
 export default function Manifesto() {
   return (
@@ -61,8 +60,8 @@ export default function Manifesto() {
           <Reveal className="min-w-0 lg:col-span-5" delay={1}>
             <div className="relative mx-auto aspect-[2/3] w-full max-w-md overflow-hidden sm:max-w-lg lg:mx-0 lg:max-w-none">
               <MoodyImage
-                src={MANIFESTO_IMAGE}
-                alt="Vertical view of Loire vineyard slopes and the river corridor"
+                src={siteImages.manifesto.src}
+                alt={siteImages.manifesto.alt}
                 fill
                 sizes="(max-width: 1024px) 90vw, 40vw"
               />
