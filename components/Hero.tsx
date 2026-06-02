@@ -57,16 +57,16 @@ export default function Hero() {
             landscape in France, now through the lens of Wine Spectator.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-10 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <Link
               href="#trade-portal"
-              className={`inline-flex min-h-12 items-center justify-center rounded-sm bg-white px-8 py-3 ${typeButton} text-loire-blue transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
+              className={`inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-6 py-3 sm:w-auto sm:px-8 ${typeButton} text-loire-blue transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
               Enter the Trade Portal
             </Link>
             <Link
               href="#planner"
-              className={`inline-flex min-h-12 items-center justify-center rounded-sm border border-white/50 bg-white/10 px-8 py-3 ${typeButton} text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
+              className={`inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/50 bg-white/10 px-6 py-3 sm:w-auto sm:px-8 ${typeButton} text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
               Explore the valley
             </Link>

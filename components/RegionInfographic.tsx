@@ -107,7 +107,7 @@ function StatCard({ stat }: { stat: RegionStat }) {
 
   return (
     <article
-      className="group relative w-[13.75rem] max-w-full sm:w-[14.5rem]"
+      className="group relative w-full max-w-[14.5rem]"
       aria-label={ariaLabel}
     >
       <div
@@ -283,7 +283,7 @@ export default function RegionInfographic() {
 
       {/* Mobile / tablet: vertical river timeline */}
       <motion.ol
-        className="relative space-y-10 pl-14 sm:pl-16 lg:hidden"
+        className="relative space-y-8 pl-11 pr-1 sm:space-y-10 sm:pl-14 sm:pr-0 lg:hidden"
         initial={reduceMotion ? false : "hidden"}
         whileInView={reduceMotion ? undefined : "visible"}
         viewport={{ once: true, margin: "-6% 0px" }}
@@ -308,7 +308,7 @@ export default function RegionInfographic() {
             }}
           >
             <span
-              className="absolute -left-[2.35rem] top-6 flex h-3 w-3 rounded-full bg-white ring-4 ring-loire-accent-gold/25 sm:-left-[2.6rem]"
+              className="absolute -left-[1.85rem] top-6 flex h-3 w-3 rounded-full bg-white ring-4 ring-loire-accent-gold/25 sm:-left-[2.35rem]"
               aria-hidden
             />
             <StatCard stat={stat} />

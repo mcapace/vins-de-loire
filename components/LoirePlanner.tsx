@@ -192,7 +192,7 @@ export default function LoirePlanner() {
 
         <div className="mt-10 border-b border-loire-blue-faint sm:mt-12">
           <div
-            className="flex gap-1 overflow-x-auto pb-px"
+            className="-mx-1 flex gap-1 overflow-x-auto scroll-smooth pb-px [-webkit-overflow-scrolling:touch] [scrollbar-width:none] sm:mx-0 [&::-webkit-scrollbar]:hidden"
             role="tablist"
             aria-label="Loire planning topics"
           >

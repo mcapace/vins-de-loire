@@ -62,6 +62,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -109,6 +110,12 @@ body {
     rgb(29 43 80 / 0.85) 65%,
     transparent 100%
   );
+}
+
+@media (max-width: 639px) {
+  .photo-card-text {
+    padding-top: 5.5rem;
+  }
 }
 
 @media (min-width: 640px) {
