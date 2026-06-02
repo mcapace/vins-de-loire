@@ -6,6 +6,7 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
 
 const MANIFESTO_IMAGE =
   "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-28.jpg";
@@ -20,19 +21,17 @@ export default function Manifesto() {
       <SectionContainer>
         <div className="grid min-w-0 items-start gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
           <Reveal className="min-w-0 lg:col-span-7 lg:pr-4 xl:pr-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-              Two thousand years in the making
-            </p>
+            <p className={typeEyebrowLight}>Two thousand years in the making</p>
 
             <h2
               id="manifesto-heading"
-              className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1] ${spaceEyebrowToHeadline}`}
+              className={`${typeDisplayLight} md:text-5xl lg:text-[3.25rem] lg:leading-[1.1] ${spaceEyebrowToHeadline}`}
             >
               The Loire made us a bridge
             </h2>
 
             <p
-              className={`max-w-2xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+              className={`max-w-2xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Between flourishing estates and intimate cellars, between reds,
               rosés, and whites, between sparkling wines and noble sweets, the
@@ -41,7 +40,7 @@ export default function Manifesto() {
               extraordinary geological mosaic.
             </p>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-loire-blue-deep/90 sm:mt-8 sm:text-xl">
+            <p className="mt-6 max-w-2xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:mt-8 sm:text-xl">
               From water lands to volcanic soils, the Loire reminds us that
               nature and craft move together. The vineyards of Loire are a
               bridge between UNESCO landscapes, singular terroirs, and grape
@@ -49,11 +48,11 @@ export default function Manifesto() {
             </p>
 
             <figure className="relative mt-12 border-l-4 border-loire-blue-mid pl-6 sm:mt-14 sm:pl-8 md:mt-16">
-              <blockquote className="font-display text-2xl font-medium leading-snug text-loire-blue-deep sm:text-3xl md:text-4xl md:leading-snug">
+              <blockquote className="font-display text-2xl font-light italic leading-snug tracking-[-0.01em] text-loire-blue-deep sm:text-3xl md:text-4xl md:leading-snug">
                 Openness is our way of life. Sharing with the curious and the
                 initiated is our river journey.
               </blockquote>
-              <figcaption className="mt-5 text-sm font-medium uppercase tracking-[0.18em] text-loire-blue-mid">
+              <figcaption className="mt-5 font-sans text-[11px] font-normal uppercase tracking-[0.26em] text-loire-blue-mid">
                 Vins de Loire
               </figcaption>
             </figure>

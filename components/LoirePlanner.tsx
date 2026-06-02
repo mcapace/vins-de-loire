@@ -14,6 +14,11 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import {
+  typeButton,
+  typeDisplayLight,
+  typeEyebrowLight,
+} from "@/lib/typography";
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
@@ -37,7 +42,7 @@ function TradePanel() {
         </ul>
         <Link
           href="#trade-portal"
-          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-loire-blue"
+          className={`mt-8 inline-flex min-h-12 items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 ${typeButton} text-white transition-colors hover:bg-loire-blue`}
         >
           Join the Loire Trade Network
         </Link>
@@ -67,7 +72,7 @@ function TerritoriesPanel() {
             key={item.name}
             className="border-l-4 border-loire-blue-mid bg-loire-accent-cream/50 px-5 py-4"
           >
-            <p className="font-display text-xl font-semibold text-loire-blue-deep">
+            <p className="font-display text-xl font-medium tracking-[-0.02em] text-loire-blue-deep">
               {item.name}
             </p>
             <p className="mt-1 text-sm text-loire-blue-deep/80">{item.note}</p>
@@ -134,12 +139,10 @@ export default function LoirePlanner() {
     >
       <SectionContainer>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-            Plan your approach
-          </p>
+          <p className={typeEyebrowLight}>Plan your approach</p>
           <h2
             id="planner-heading"
-            className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+            className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
           >
             Your Loire toolkit
           </h2>
@@ -168,7 +171,7 @@ export default function LoirePlanner() {
                   aria-controls={`planner-panel-${tab.id}`}
                   id={`planner-tab-${tab.id}`}
                   onClick={() => setActive(tab.id)}
-                  className={`shrink-0 border-b-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition-colors sm:px-6 sm:text-sm ${
+                  className={`shrink-0 border-b-2 px-4 py-3 font-sans text-[11px] font-normal uppercase tracking-[0.2em] transition-colors sm:px-6 sm:text-xs ${
                     isActive
                       ? "border-loire-blue-deep text-loire-blue-deep"
                       : "border-transparent text-loire-blue-mid hover:text-loire-blue-deep"

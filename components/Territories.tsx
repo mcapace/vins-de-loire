@@ -9,6 +9,7 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import { revealTransition, staggerChildren } from "@/lib/motion";
 
@@ -23,12 +24,10 @@ export default function Territories() {
     >
       <SectionContainer>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-            The territories
-          </p>
+          <p className={typeEyebrowLight}>The territories</p>
           <h2
             id="territories-heading"
-            className={`max-w-4xl font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+            className={`max-w-4xl ${typeDisplayLight} ${spaceEyebrowToHeadline}`}
           >
             From the Loire Océanique to the Loire Volcanique
           </h2>
@@ -78,7 +77,7 @@ export default function Territories() {
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-loire-blue-deep/90 via-loire-blue-deep/25 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">
+                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-white sm:text-3xl">
                     {territory.name}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-loire-blue-pale sm:text-base">

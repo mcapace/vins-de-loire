@@ -8,6 +8,12 @@ import {
 } from "@/lib/section";
 import { wines, type Wine, type WineColor } from "@/src/data/wines";
 import Link from "next/link";
+import {
+  typeDisplayLight,
+  typeEyebrowLight,
+  typeScore,
+  typeScoreLabel,
+} from "@/lib/typography";
 
 const RATINGS_IMAGE =
   "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-50.jpg";
@@ -25,12 +31,8 @@ function ScoreBadge({ score }: { score: number }) {
       className="flex shrink-0 flex-col items-center justify-center rounded-sm border-2 border-loire-blue-deep bg-white px-4 py-3 text-loire-blue-deep shadow-sm sm:px-5 sm:py-4"
       aria-label={`Wine Spectator score ${score} points`}
     >
-      <span className="font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
-        {score}
-      </span>
-      <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-loire-blue-mid sm:text-xs">
-        Points
-      </span>
+      <span className={typeScore}>{score}</span>
+      <span className={`mt-1 ${typeScoreLabel}`}>Points</span>
     </div>
   );
 }
@@ -44,7 +46,7 @@ function WineCard({ wine }: { wine: Wine }) {
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-loire-blue-mid">
             {wine.appellation}
           </p>
-          <h3 className="mt-2 font-display text-xl font-semibold leading-snug text-loire-blue-deep sm:text-2xl">
+          <h3 className="mt-2 font-display text-xl font-medium leading-snug tracking-[-0.02em] text-loire-blue-deep sm:text-2xl">
             {wine.name}
           </h3>
           <p className="mt-1 text-sm font-medium text-loire-blue sm:text-base">
@@ -84,10 +86,8 @@ function RatingsComingSoon() {
       </div>
 
       <div className="flex flex-col justify-center rounded-sm border border-dashed border-loire-blue-light bg-loire-accent-cream/40 p-8 sm:p-10 lg:col-span-7">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-loire-blue-mid">
-          Publishing soon
-        </p>
-        <p className="mt-4 font-display text-2xl font-semibold text-loire-blue-deep sm:text-3xl">
+        <p className={typeEyebrowLight}>Publishing soon</p>
+        <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-3xl">
           Scored wines arrive with editorial approval
         </p>
         <p className="mt-4 text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
@@ -118,12 +118,10 @@ export default function WineGrid() {
       <SectionContainer>
         <Reveal>
           <header className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-              Recently rated
-            </p>
+            <p className={typeEyebrowLight}>Recently rated</p>
             <h2
               id="wine-grid-heading"
-              className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+              className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
             >
               The Loire, scored by Wine Spectator
             </h2>

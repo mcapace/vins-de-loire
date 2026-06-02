@@ -3,6 +3,7 @@
 import CoBrandLockup from "@/components/CoBrandLockup";
 import SponsorBar from "@/components/SponsorBar";
 import Link from "next/link";
+import { typeButton, typeNavLink } from "@/lib/typography";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -53,7 +54,7 @@ export default function SiteNav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-sm px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-xs"
+                className={`rounded-sm px-3 py-2 ${typeNavLink} text-white/90 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white`}
               >
                 {link.label}
               </a>
@@ -62,7 +63,7 @@ export default function SiteNav() {
 
           <a
             href="#trade-portal"
-            className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-sm bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-loire-blue transition-colors hover:bg-loire-blue-faint sm:px-5 sm:text-xs"
+            className={`inline-flex min-h-10 shrink-0 items-center justify-center rounded-sm bg-white px-4 py-2 ${typeButton} text-loire-blue transition-colors hover:bg-loire-blue-faint sm:px-5`}
           >
             Plan your visit
           </a>

@@ -7,6 +7,11 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import {
+  typeButton,
+  typeDisplayLight,
+  typeEyebrowLight,
+} from "@/lib/typography";
 import Link from "next/link";
 
 export default function FeaturedDiscoveries() {
@@ -18,17 +23,15 @@ export default function FeaturedDiscoveries() {
     >
       <SectionContainer>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-            Discover the Loire
-          </p>
+          <p className={typeEyebrowLight}>Discover the Loire</p>
           <h2
             id="featured-heading"
-            className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+            className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
           >
             Where every mile tells a story
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             Start with the river that shaped two millennia of savoir-faire, the
             grapes that define the shelf, and the territories from the Atlantic
@@ -54,7 +57,7 @@ export default function FeaturedDiscoveries() {
                   </p>
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <h3 className="font-display text-2xl font-semibold leading-snug text-loire-blue-deep">
+                  <h3 className="font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-loire-blue-deep">
                     {card.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-loire-blue-deep/85 sm:text-base">
@@ -62,7 +65,7 @@ export default function FeaturedDiscoveries() {
                   </p>
                   <Link
                     href={card.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue transition-colors hover:text-loire-blue-deep"
+                    className={`mt-6 inline-flex items-center gap-2 ${typeButton} text-loire-blue transition-colors hover:text-loire-blue-deep`}
                   >
                     Read more
                     <span aria-hidden>→</span>

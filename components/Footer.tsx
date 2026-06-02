@@ -19,7 +19,7 @@ export default function Footer() {
       className={`border-t border-white/10 bg-loire-blue-deep text-white/90 ${sectionPaddingCompact}`}
     >
       <SectionContainer>
-        <p className="text-center font-display text-xl font-medium leading-relaxed text-white sm:text-left sm:text-2xl">
+        <p className="text-center font-display text-xl font-light leading-relaxed tracking-[-0.01em] text-white sm:text-left sm:text-2xl">
           Explore, learn, and connect. Your Loire journey starts here.
         </p>
 

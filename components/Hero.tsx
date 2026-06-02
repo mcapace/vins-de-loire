@@ -3,9 +3,7 @@
 import CoBrandLockup from "@/components/CoBrandLockup";
 import MoodyImage from "@/components/MoodyImage";
 import Strates from "@/components/Strates";
-import {
-  typeBodyDark,
-} from "@/lib/typography";
+import { typeBodyDark, typeButton, typeHero } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
@@ -50,7 +48,7 @@ export default function Hero() {
         >
           <CoBrandLockup variant="on-dark" size="lg" priority />
 
-          <h1 className="text-shadow-hero mt-8 font-display text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+          <h1 className={`text-shadow-hero mt-8 ${typeHero}`}>
             The Wines of a Lifetime
           </h1>
 
@@ -63,32 +61,19 @@ export default function Hero() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
             <Link
               href="#trade-portal"
-              className="inline-flex min-h-12 items-center justify-center rounded-sm bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-loire-blue transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className={`inline-flex min-h-12 items-center justify-center rounded-sm bg-white px-8 py-3 ${typeButton} text-loire-blue transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
               Enter the Trade Portal
             </Link>
             <Link
               href="#planner"
-              className="inline-flex min-h-12 items-center justify-center rounded-sm border border-white/50 bg-white/10 px-8 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className={`inline-flex min-h-12 items-center justify-center rounded-sm border border-white/50 bg-white/10 px-8 py-3 ${typeButton} text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
               Explore the valley
             </Link>
           </div>
         </motion.div>
       </div>
-
-      <a
-        href="#featured"
-        className="absolute bottom-28 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/90 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:bottom-32"
-        aria-label="Scroll to discover the Loire"
-      >
-        <span className="text-[10px] font-medium uppercase tracking-[0.28em] sm:text-xs">
-          Scroll
-        </span>
-        <span className="flex h-10 w-6 items-start justify-center rounded-full border border-white/50 p-1.5">
-          <span className="h-2 w-1 animate-hero-scroll rounded-full bg-white" />
-        </span>
-      </a>
 
       <div className="absolute inset-x-0 bottom-0 z-10 h-16 sm:h-20">
         <Strates className="h-full w-full" opacity={0.85} />

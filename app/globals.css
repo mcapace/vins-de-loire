@@ -33,11 +33,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia,
     "Times New Roman", serif;
 
-  --animate-hero-scroll: hero-scroll 2s ease-in-out infinite;
   --animate-ken-burns: ken-burns 28s ease-in-out infinite alternate;
 }
 
@@ -59,9 +58,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Readable text on photography */
@@ -111,18 +112,7 @@ body {
 
 .font-display {
   font-family: var(--font-display);
-}
-
-@keyframes hero-scroll {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(0.5rem);
-    opacity: 0.5;
-  }
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 @keyframes ken-burns {

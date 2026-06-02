@@ -5,6 +5,12 @@ import Strates from "@/components/Strates";
 import SectionContainer from "@/components/SectionContainer";
 import { regionStats, regionStatsFootnote } from "@/lib/region-stats";
 import { sectionPaddingCompact } from "@/lib/section";
+import {
+  typeDisplayDark,
+  typeEyebrowDark,
+  typeStatDark,
+  typeStatLabelDark,
+} from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import { revealTransition, staggerChildren } from "@/lib/motion";
 
@@ -20,13 +26,8 @@ export default function RegionStats() {
       <Strates className="absolute inset-0 opacity-25" />
       <SectionContainer className="relative z-10">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
-            The region
-          </p>
-          <h2
-            id="region-stats-heading"
-            className="mt-5 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
-          >
+          <p className={typeEyebrowDark}>The region</p>
+          <h2 id="region-stats-heading" className={`mt-6 ${typeDisplayDark}`}>
             Loire Valley at a glance
           </h2>
         </Reveal>
@@ -58,12 +59,8 @@ export default function RegionStats() {
               }
               className="flex min-w-0 flex-col border-t border-loire-blue-pale/25 pt-6 sm:pt-8"
             >
-              <p className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl">
-                {stat.value}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-white/85 sm:text-base">
-                {stat.label}
-              </p>
+              <p className={typeStatDark}>{stat.value}</p>
+              <p className={`mt-5 ${typeStatLabelDark}`}>{stat.label}</p>
             </motion.li>
           ))}
         </motion.ul>

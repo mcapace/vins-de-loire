@@ -6,6 +6,7 @@ import Strates from "@/components/Strates";
 import SectionContainer from "@/components/SectionContainer";
 import { grapeCards } from "@/lib/grapes";
 import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
+import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import { revealTransition, staggerChildren } from "@/lib/motion";
 
@@ -20,17 +21,15 @@ export default function GrapesStyles() {
     >
       <SectionContainer>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-            Know the wines
-          </p>
+          <p className={typeEyebrowLight}>Know the wines</p>
           <h2
             id="grapes-heading"
-            className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+            className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
           >
             Six expressions of one river
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             Thirty-three grape varieties thrive across the Loire vineyards.
             These six define the identity trade professionals meet most often
@@ -78,7 +77,7 @@ export default function GrapesStyles() {
                   <div className="absolute -top-3 right-4 h-6 w-24 overflow-hidden rounded-sm opacity-60">
                     <Strates className="h-full w-full" opacity={0.9} />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-loire-blue-deep">
+                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep">
                     {card.name}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-loire-blue-deep/90 sm:text-base">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Poppins } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import SiteProviders from "@/components/SiteProviders";
 import {
   faviconPath,
@@ -11,17 +11,18 @@ import {
 } from "@/lib/site";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -74,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${jost.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}

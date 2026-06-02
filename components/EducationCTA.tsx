@@ -6,6 +6,11 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import {
+  typeButton,
+  typeDisplayDark,
+  typeEyebrowDark,
+} from "@/lib/typography";
 
 const unlocks = [
   "Official appellation map and territory guides",
@@ -14,11 +19,9 @@ const unlocks = [
   "Opportunities to connect at tastings and trade events",
 ] as const;
 
-const buttonPrimary =
-  "inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue shadow-sm transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:text-base";
+const buttonPrimary = `inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-8 py-3 text-center ${typeButton} text-loire-blue shadow-sm transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto`;
 
-const buttonSecondary =
-  "inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/40 px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-[border-color,color,background-color] duration-200 hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:text-base";
+const buttonSecondary = `inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/40 px-8 py-3 text-center ${typeButton} text-white transition-[border-color,color,background-color] duration-200 hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto`;
 
 export default function EducationCTA() {
   return (
@@ -31,19 +34,17 @@ export default function EducationCTA() {
       <SectionContainer className="relative z-10">
         <Reveal>
           <div className="mx-auto max-w-3xl lg:mx-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
-              For the trade
-            </p>
+            <p className={typeEyebrowDark}>For the trade</p>
 
             <h2
               id="education-cta-heading"
-              className={`font-display text-3xl font-semibold leading-snug tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight ${spaceEyebrowToHeadline}`}
+              className={`${typeDisplayDark} lg:leading-tight ${spaceEyebrowToHeadline}`}
             >
               Your Loire toolkit, in one place
             </h2>
 
             <p
-              className={`text-lg leading-relaxed text-white/95 sm:text-xl ${spaceHeadlineToBody}`}
+              className={`font-sans text-lg font-light leading-relaxed text-white/95 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Complimentary registration for trade members unlocks the resources
               you need to sell, teach, and celebrate the Loire with confidence.

@@ -6,6 +6,12 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import {
+  typeDisplayLight,
+  typeEyebrowLight,
+  typeStatCaptionLight,
+  typeStatCompact,
+} from "@/lib/typography";
 
 const SUSTAINABILITY_IMAGE =
   "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-16.jpg";
@@ -30,27 +36,29 @@ export default function Sustainability() {
 
           <Reveal className="min-w-0 lg:col-span-6" delay={1}>
             <div className="border-l-4 border-loire-accent-forest pl-6 sm:pl-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-accent-forest sm:text-sm">
+              <p
+                className={`${typeEyebrowLight} !text-loire-accent-forest`}
+              >
                 A shared commitment
               </p>
 
               <h2
                 id="sustainability-heading"
-                className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-[2.5rem] lg:leading-tight ${spaceEyebrowToHeadline}`}
+                className={`${typeDisplayLight} sm:text-4xl lg:text-[2.5rem] ${spaceEyebrowToHeadline}`}
               >
                 Toward a fully sustainable region
               </h2>
 
               <p
-                className={`text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+                className={`font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
               >
                 The vineyards of Loire are advancing together:{" "}
-                <span className="font-semibold text-loire-blue-deep">
+                <span className="font-medium text-loire-blue-deep">
                   85% of vineyards are already certified organic or
                   environmentally sustainable
                 </span>
                 , with a collective goal of{" "}
-                <span className="font-semibold text-loire-accent-forest">
+                <span className="font-medium text-loire-accent-forest">
                   100% by 2030
                 </span>
                 .
@@ -59,20 +67,20 @@ export default function Sustainability() {
 
             <div className="mt-10 grid min-w-0 grid-cols-2 gap-4 sm:mt-12 sm:gap-6">
               <div className="rounded-sm bg-loire-accent-sage/25 px-4 py-6 transition-colors duration-200 hover:bg-loire-accent-sage/35 sm:px-6 sm:py-8">
-                <p className="font-display text-4xl font-semibold leading-none text-loire-blue-deep sm:text-5xl">
-                  85%
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-loire-blue-deep/85 sm:text-base">
+                <p className={`${typeStatCompact} sm:text-5xl`}>85%</p>
+                <p className={`mt-4 ${typeStatCaptionLight}`}>
                   Vineyards certified organic or environmentally sustainable
                   today
                 </p>
               </div>
 
               <div className="rounded-sm border border-loire-accent-forest/30 bg-loire-accent-sage/15 px-4 py-6 transition-colors duration-200 hover:border-loire-accent-forest/50 sm:px-6 sm:py-8">
-                <p className="font-display text-4xl font-semibold leading-none text-loire-accent-forest sm:text-5xl">
+                <p
+                  className={`${typeStatCompact} text-loire-accent-forest sm:text-5xl`}
+                >
                   2030
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-loire-blue-deep/85 sm:text-base">
+                <p className={`mt-4 ${typeStatCaptionLight}`}>
                   Target for 100% certified organic or sustainable vineyards
                 </p>
               </div>
