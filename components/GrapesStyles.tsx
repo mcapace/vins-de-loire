@@ -5,7 +5,13 @@ import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
 import { grapeCards } from "@/lib/grapes";
 import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
-import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
+import {
+  typeDisplayLight,
+  typeEyebrowLight,
+  typePhotoCardBody,
+  typePhotoCardEyebrow,
+  typePhotoCardTitle,
+} from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import { revealTransition, staggerChildren } from "@/lib/motion";
 
@@ -71,19 +77,14 @@ export default function GrapesStyles() {
                   imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.04]"
                 />
 
-                <div
-                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/92 via-loire-blue-deep/35 to-transparent"
-                  aria-hidden
-                />
+                <div className="photo-card-scrim" aria-hidden />
 
-                <div className="relative z-10 flex h-full flex-col justify-end p-6 sm:p-7">
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-white">
-                    {card.name}
-                  </h3>
-                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-white/85 sm:text-base">
+                <div className="photo-card-text">
+                  <h3 className={typePhotoCardTitle}>{card.name}</h3>
+                  <p className={`mt-2 line-clamp-3 ${typePhotoCardBody}`}>
                     {card.description}
                   </p>
-                  <p className="mt-4 font-sans text-[11px] font-normal uppercase tracking-[0.22em] text-loire-accent-gold">
+                  <p className={`mt-4 ${typePhotoCardEyebrow}`}>
                     {card.heartland}
                   </p>
                 </div>

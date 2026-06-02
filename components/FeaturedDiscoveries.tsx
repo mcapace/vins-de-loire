@@ -8,9 +8,12 @@ import {
   spaceHeadlineToBody,
 } from "@/lib/section";
 import {
-  typeButton,
   typeDisplayLight,
   typeEyebrowLight,
+  typePhotoCardBody,
+  typePhotoCardEyebrow,
+  typePhotoCardLink,
+  typePhotoCardTitle,
 } from "@/lib/typography";
 import Link from "next/link";
 
@@ -54,24 +57,17 @@ export default function FeaturedDiscoveries() {
                   imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
                 />
 
-                <div
-                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/40 to-loire-blue-deep/5"
-                  aria-hidden
-                />
+                <div className="photo-card-scrim" aria-hidden />
 
-                <div className="relative z-10 flex min-h-[inherit] flex-col justify-end p-7 sm:p-8">
-                  <p className="font-sans text-[11px] font-normal uppercase tracking-[0.28em] text-loire-accent-gold">
-                    {card.category}
-                  </p>
-                  <h3 className="mt-3 font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-white sm:text-[1.75rem]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-white/85 sm:text-base">
+                <div className="photo-card-text">
+                  <p className={typePhotoCardEyebrow}>{card.category}</p>
+                  <h3 className={`mt-3 ${typePhotoCardTitle}`}>{card.title}</h3>
+                  <p className={`mt-3 max-w-[28ch] ${typePhotoCardBody}`}>
                     {card.excerpt}
                   </p>
                   <Link
                     href={card.href}
-                    className={`mt-6 inline-flex items-center gap-2 ${typeButton} text-white/90 transition-colors hover:text-white`}
+                    className={`mt-6 inline-flex items-center gap-2 ${typePhotoCardLink} transition-colors hover:text-loire-accent-gold`}
                   >
                     Read more
                     <span aria-hidden>→</span>

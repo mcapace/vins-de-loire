@@ -26,9 +26,9 @@ import { siteImages } from "@/lib/site-images";
 
 function TradePanel() {
   return (
-    <div className="grid min-w-0 gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
-      <div className="lg:col-span-6">
-        <ul className="space-y-4 text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
+    <div className="grid min-w-0 gap-8 lg:gap-10">
+      <div className="max-w-2xl">
+        <ul className="space-y-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
           {tradePlannerBullets.map((item) => (
             <li key={item} className="flex gap-3">
               <span
@@ -46,11 +46,12 @@ function TradePanel() {
           Join the Loire Trade Network
         </Link>
       </div>
-      <div className="relative min-h-[16rem] overflow-hidden lg:col-span-6 lg:min-h-[22rem]">
+
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-loire-blue-faint shadow-md sm:aspect-[2/1] lg:max-w-3xl">
         <PhotoFill
           src={siteImages.planner.trade.src}
           alt={siteImages.planner.trade.alt}
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          sizes="(max-width: 1024px) 100vw, 768px"
         />
       </div>
     </div>
@@ -60,7 +61,7 @@ function TradePanel() {
 function TerritoriesPanel() {
   return (
     <div>
-      <p className="max-w-2xl text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
+      <p className="max-w-2xl font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
         Four great territories stretch from Nantes to the volcanic heart of
         France. The official appellation map lives inside the Trade Portal.
       </p>
@@ -68,7 +69,7 @@ function TerritoriesPanel() {
         {territoryPlannerItems.map((item) => (
           <li
             key={item.name}
-            className="border-l-4 border-loire-blue-mid bg-loire-accent-cream/50 px-5 py-4"
+            className="border-l-4 border-loire-blue-mid bg-white/60 px-5 py-4"
           >
             <p className="font-display text-xl font-medium tracking-[-0.02em] text-loire-blue-deep">
               {item.name}
@@ -79,7 +80,7 @@ function TerritoriesPanel() {
       </ul>
       <Link
         href="#territories"
-        className="mt-8 inline-flex text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue hover:text-loire-blue-deep"
+        className={`mt-8 inline-flex ${typeButton} text-loire-blue hover:text-loire-blue-deep`}
       >
         Explore territories →
       </Link>
@@ -89,24 +90,13 @@ function TerritoriesPanel() {
 
 function RatingsPanel() {
   return (
-    <div className="relative min-h-[24rem] overflow-hidden">
-      <PhotoFill
-        src={siteImages.planner.ratings.src}
-        alt={siteImages.planner.ratings.alt}
-        sizes="100vw"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/60 to-transparent"
-        aria-hidden
-      />
-      <div className="relative z-10 flex min-h-[inherit] flex-col justify-center px-2 py-8 sm:px-4 lg:max-w-md">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-loire-blue-mid">
-          Publishing soon
-        </p>
-        <p className="mt-4 font-display text-2xl font-semibold text-loire-blue-deep sm:text-3xl">
+    <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+      <div className="lg:col-span-5">
+        <p className={typeEyebrowLight}>Publishing soon</p>
+        <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-3xl">
           The Loire, scored by Wine Spectator
         </p>
-        <p className="mt-4 text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
+        <p className="mt-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
           Ratings from Kristen Bieler will populate as soon as the approved list
           is released. Register for trade access for alerts and full notes.
         </p>
@@ -116,6 +106,14 @@ function RatingsPanel() {
         >
           View ratings section →
         </Link>
+      </div>
+
+      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint shadow-md lg:col-span-7 lg:aspect-[16/10]">
+        <PhotoFill
+          src={siteImages.planner.ratings.src}
+          alt={siteImages.planner.ratings.alt}
+          sizes="(max-width: 1024px) 100vw, 58vw"
+        />
       </div>
     </div>
   );
@@ -146,7 +144,7 @@ export default function LoirePlanner() {
             Your Loire toolkit
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             Trade resources, territory guides, and Wine Spectator ratings in
             one place. Choose what you need first.

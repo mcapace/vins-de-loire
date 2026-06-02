@@ -9,7 +9,13 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
-import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
+import {
+  typeDisplayLight,
+  typeEyebrowLight,
+  typePhotoCardBody,
+  typePhotoCardEyebrow,
+  typePhotoCardTitleLg,
+} from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import { revealTransition, staggerChildren } from "@/lib/motion";
 
@@ -75,19 +81,14 @@ export default function Territories() {
                   imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.05]"
                 />
 
-                <div
-                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/30 to-transparent"
-                  aria-hidden
-                />
+                <div className="photo-card-scrim" aria-hidden />
 
-                <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
-                  <p className="font-sans text-[10px] font-normal uppercase tracking-[0.3em] text-loire-accent-gold">
-                    Territory
-                  </p>
-                  <h3 className="mt-2 font-display text-2xl font-medium tracking-[-0.02em] text-white sm:text-3xl">
+                <div className="photo-card-text">
+                  <p className={typePhotoCardEyebrow}>Territory</p>
+                  <h3 className={`mt-2 ${typePhotoCardTitleLg}`}>
                     {territory.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">
+                  <p className={`mt-2 ${typePhotoCardBody}`}>
                     {territory.descriptor}
                   </p>
                 </div>
