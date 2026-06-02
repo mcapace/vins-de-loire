@@ -12,6 +12,8 @@ const HERO_IMAGE =
 const LOGO_SRC =
   "/logos/Logo-Vins-de-Loire-BLANC/Logo-Vins-de-Loire-BLANC.png";
 
+const WINE_SPECTATOR_LOGO = "/logos/wine-spectator/wine-spectator-white.png";
+
 export default function Hero() {
   const reduceMotion = useReducedMotion();
 
@@ -56,14 +58,24 @@ export default function Hero() {
           />
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-loire-blue-pale sm:text-sm"
+          className="mt-8 flex flex-col items-center gap-4"
         >
-          Presented by Wine Spectator
-        </motion.p>
+          <Image
+            src={WINE_SPECTATOR_LOGO}
+            alt="Presented by Wine Spectator"
+            width={220}
+            height={32}
+            priority
+            className="h-auto w-36 sm:w-44 md:w-48"
+          />
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-loire-blue-pale sm:text-sm">
+            Presented by Wine Spectator
+          </p>
+        </motion.div>
 
         <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}

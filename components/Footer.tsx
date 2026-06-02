@@ -6,6 +6,8 @@ import { sponsorDisclosure } from "@/lib/site";
 const VINS_DE_LOIRE_LOGO =
   "/logos/Logo-Vins-de-Loire-Bleu/Logo-Vins-de-Loire-BLEU.png";
 
+const WINE_SPECTATOR_LOGO = "/logos/wine-spectator/wine-spectator-white.png";
+
 const footerLinks = [
   { label: "Loire Wines", href: "#" },
   { label: "Wine Spectator", href: "#" },
@@ -35,12 +37,13 @@ export default function Footer() {
             className="h-auto w-44 sm:w-52"
           />
 
-          <p
-            className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl"
-            aria-label="Wine Spectator"
-          >
-            Wine Spectator
-          </p>
+          <Image
+            src={WINE_SPECTATOR_LOGO}
+            alt="Wine Spectator"
+            width={320}
+            height={48}
+            className="h-auto w-48 sm:w-56 md:w-64"
+          />
         </div>
 
         <p

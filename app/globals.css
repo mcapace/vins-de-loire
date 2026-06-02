@@ -64,27 +64,25 @@ body {
 
 /* Moody editorial photography treatment */
 .moody-photo {
-  filter: contrast(1.1) saturate(1.08) brightness(0.92);
+  filter: contrast(1.06) saturate(1.12) brightness(0.96);
 }
 
 .moody-overlay {
   background: linear-gradient(
     165deg,
-    rgb(29 43 80 / 0.35) 0%,
-    rgb(29 43 80 / 0.12) 45%,
-    rgb(237 220 206 / 0.18) 100%
+    rgb(29 43 80 / 0.22) 0%,
+    rgb(29 43 80 / 0.06) 50%,
+    rgb(237 220 206 / 0.1) 100%
   );
-  mix-blend-mode: multiply;
 }
 
 .moody-overlay-strong {
   background: linear-gradient(
     to bottom,
-    rgb(29 43 80 / 0.55) 0%,
-    rgb(29 43 80 / 0.35) 50%,
-    rgb(29 43 80 / 0.65) 100%
+    rgb(29 43 80 / 0.45) 0%,
+    rgb(29 43 80 / 0.2) 45%,
+    rgb(29 43 80 / 0.55) 100%
   );
-  mix-blend-mode: multiply;
 }
 
 .font-display {
@@ -108,6 +106,6 @@ body {
     transform: scale(1) translate(0, 0);
   }
   100% {
-    transform: scale(1.08) translate(-1.5%, -1%);
+    transform: scale(1.1) translate(-2%, -1.5%);
   }
 }

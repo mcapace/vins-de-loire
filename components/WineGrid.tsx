@@ -1,7 +1,16 @@
+import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
+import {
+  sectionPadding,
+  spaceEyebrowToHeadline,
+  spaceHeadlineToBody,
+} from "@/lib/section";
 import { wines, type Wine, type WineColor } from "@/src/data/wines";
+import Link from "next/link";
+
+const RATINGS_IMAGE =
+  "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-50.jpg";
 
 const colorLabels: Record<WineColor, string> = {
   white: "White",
@@ -62,10 +71,43 @@ function WineCard({ wine }: { wine: Wine }) {
   );
 }
 
+function RatingsComingSoon() {
+  return (
+    <div className="mt-12 grid min-w-0 gap-8 lg:grid-cols-12 lg:gap-12">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-5 lg:aspect-auto lg:min-h-[320px]">
+        <MoodyImage
+          src={RATINGS_IMAGE}
+          alt="Sparkling Loire wines in the glass, fines bulles"
+          fill
+          sizes="(max-width: 1024px) 100vw, 40vw"
+        />
+      </div>
+
+      <div className="flex flex-col justify-center rounded-sm border border-dashed border-loire-blue-light bg-loire-accent-cream/40 p-8 sm:p-10 lg:col-span-7">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-loire-blue-mid">
+          Publishing soon
+        </p>
+        <p className="mt-4 font-display text-2xl font-semibold text-loire-blue-deep sm:text-3xl">
+          Scored wines arrive with editorial approval
+        </p>
+        <p className="mt-4 text-base leading-relaxed text-loire-blue sm:text-lg">
+          Wine Spectator ratings from Kristen Bieler will populate this section
+          as soon as the approved list is released. Register for trade access to
+          get alerts and full tasting notes.
+        </p>
+        <Link
+          href="#trade-portal"
+          className="mt-8 inline-flex min-h-12 w-fit items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-loire-blue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-loire-blue-deep"
+        >
+          Enter the Trade Portal
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default function WineGrid() {
-  if (wines.length === 0) {
-    return null;
-  }
+  const hasWines = wines.length > 0;
 
   return (
     <section
@@ -94,13 +136,19 @@ export default function WineGrid() {
           </header>
         </Reveal>
 
-        <ul className="mt-12 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-8">
-          {wines.map((wine, index) => (
-            <Reveal key={wine.id} as="li" className="flex min-w-0" delay={index % 3}>
-              <WineCard wine={wine} />
-            </Reveal>
-          ))}
-        </ul>
+        {hasWines ? (
+          <ul className="mt-12 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-8">
+            {wines.map((wine, index) => (
+              <Reveal key={wine.id} as="li" className="flex min-w-0" delay={index % 3}>
+                <WineCard wine={wine} />
+              </Reveal>
+            ))}
+          </ul>
+        ) : (
+          <Reveal delay={1}>
+            <RatingsComingSoon />
+          </Reveal>
+        )}
       </SectionContainer>
     </section>
   );

@@ -13,12 +13,18 @@ export default function MoodyImage({
   overlayClassName = "",
   className = "",
   alt,
+  fill,
   ...props
 }: MoodyImageProps) {
+  const sizeClass = fill ? "absolute inset-0 h-full w-full" : "relative h-full w-full";
+
   return (
-    <div className={`relative overflow-hidden ${wrapperClassName}`.trim()}>
+    <div
+      className={`overflow-hidden ${sizeClass} ${wrapperClassName}`.trim()}
+    >
       <Image
         alt={alt}
+        fill={fill}
         className={`moody-photo object-cover object-center ${className}`.trim()}
         {...props}
       />

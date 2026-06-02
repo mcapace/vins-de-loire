@@ -1,20 +1,20 @@
+"use client";
+
+import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
-import Strates from "@/components/Strates";
 import SectionContainer from "@/components/SectionContainer";
+import { territories } from "@/lib/territories";
 import {
   sectionPadding,
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
-
-const territories = [
-  { name: "Nantais", className: "bg-loire-blue-faint text-loire-blue-deep" },
-  { name: "Anjou-Saumur", className: "bg-loire-blue-light text-loire-blue-deep" },
-  { name: "Touraine", className: "bg-loire-blue-mid text-white" },
-  { name: "Centre-Loire", className: "bg-loire-blue-deep text-white" },
-] as const;
+import { motion, useReducedMotion } from "framer-motion";
+import { revealTransition, staggerChildren } from "@/lib/motion";
 
 export default function Territories() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
@@ -36,31 +36,61 @@ export default function Territories() {
           >
             The Loire vineyards stretch from the Atlantic to the volcanic heart
             of France: from Nantes to Clermont-Ferrand, from oceanic freshness
-            to inland depth. Four great territories tell the story: Nantais,
-            Anjou-Saumur, Touraine, and Centre-Loire.
+            to inland depth. Four great territories tell the story.
           </p>
         </Reveal>
 
-        <Reveal delay={1}>
-          <div className="relative mt-12 overflow-hidden rounded-sm border border-loire-blue-faint sm:mt-14">
-            <div className="relative h-48 sm:h-56 lg:h-64">
-              <Strates className="absolute inset-0" opacity={0.95} />
-              <div className="absolute inset-0 bg-linear-to-r from-loire-accent-sage/30 via-transparent to-loire-blue-deep/40" />
-            </div>
-            <ul className="relative z-10 grid grid-cols-2 gap-px bg-loire-blue-faint/40 lg:grid-cols-4">
-              {territories.map((territory) => (
-                <li
-                  key={territory.name}
-                  className={`px-4 py-6 text-center sm:py-8 ${territory.className}`}
-                >
-                  <p className="font-display text-lg font-semibold sm:text-xl">
+        <motion.ul
+          className="mt-12 grid min-w-0 grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6"
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "visible"}
+          viewport={{ once: true, margin: "-8% 0px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: staggerChildren } },
+          }}
+        >
+          {territories.map((territory) => (
+            <motion.li
+              key={territory.name}
+              variants={
+                reduceMotion
+                  ? undefined
+                  : {
+                      hidden: { opacity: 0, y: 24 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: revealTransition,
+                      },
+                    }
+              }
+              className="min-w-0"
+            >
+              <article className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-loire-blue-faint shadow-md transition-shadow duration-300 hover:shadow-xl">
+                <MoodyImage
+                  src={territory.image}
+                  alt={`${territory.name} vineyards in the Loire Valley`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  overlayClassName="moody-overlay"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-loire-blue-deep/90 via-loire-blue-deep/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">
                     {territory.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-loire-blue-pale sm:text-base">
+                    {territory.descriptor}
                   </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p className="mt-6 text-sm leading-relaxed text-loire-blue sm:text-base">
+                </div>
+              </article>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        <Reveal delay={1}>
+          <p className="mt-8 text-sm leading-relaxed text-loire-blue sm:mt-10 sm:text-base">
             Stylized journey along the Loire. The official appellation map and
             detailed territory tools are available inside the Trade Portal.
           </p>

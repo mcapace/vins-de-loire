@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import TradePortalHub from "@/components/TradePortalHub";
 import Manifesto from "@/components/Manifesto";
 import GrapesStyles from "@/components/GrapesStyles";
 import RegionStats from "@/components/RegionStats";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="min-w-0 overflow-x-hidden">
       <Hero />
+      <TradePortalHub />
       <Manifesto />
       <GrapesStyles />
       <RegionStats />
