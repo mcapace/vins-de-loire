@@ -43,6 +43,7 @@ next-env.d.ts
 # Large source assets (local reference only, not required for the site build)
 /public/brand/*.pdf
 /public/images/*.pdf
+/public/images-original/
 /public/logos/**/*.ai
 /public/logos/**/*.pdf
 /public/logos/**/*.svg
