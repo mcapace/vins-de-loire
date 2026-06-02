@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import SiteNav from "@/components/SiteNav";
 import TradePortalHub from "@/components/TradePortalHub";
 import Manifesto from "@/components/Manifesto";
 import GrapesStyles from "@/components/GrapesStyles";
@@ -11,7 +12,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-w-0 overflow-x-hidden">
+    <>
+      <SiteNav />
+      <main id="main-content" className="min-w-0 overflow-x-hidden">
       <Hero />
       <TradePortalHub />
       <Manifesto />
@@ -22,6 +25,7 @@ export default function Home() {
       <Sustainability />
       <EducationCTA />
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }

@@ -18,7 +18,7 @@ const buttonPrimary =
   "inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue shadow-sm transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:text-base";
 
 const buttonSecondary =
-  "inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-loire-blue-pale/50 px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue-pale transition-[border-color,color,background-color] duration-200 hover:border-white hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:text-base";
+  "inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/40 px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-[border-color,color,background-color] duration-200 hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:text-base";
 
 export default function EducationCTA() {
   return (
@@ -31,25 +31,25 @@ export default function EducationCTA() {
       <SectionContainer className="relative z-10">
         <Reveal>
           <div className="mx-auto max-w-3xl lg:mx-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-pale sm:text-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
               For the trade
             </p>
 
             <h2
               id="education-cta-heading"
-              className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl lg:leading-tight ${spaceEyebrowToHeadline}`}
+              className={`font-display text-3xl font-semibold leading-snug tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight ${spaceEyebrowToHeadline}`}
             >
               Your Loire toolkit, in one place
             </h2>
 
             <p
-              className={`text-lg leading-relaxed text-loire-blue-faint sm:text-xl ${spaceHeadlineToBody}`}
+              className={`text-lg leading-relaxed text-white/95 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Complimentary registration for trade members unlocks the resources
               you need to sell, teach, and celebrate the Loire with confidence.
             </p>
 
-            <ul className="mt-8 list-inside list-disc space-y-3 text-base leading-relaxed text-loire-blue-pale sm:text-lg">
+            <ul className="mt-8 list-inside list-disc space-y-3 text-base leading-relaxed text-white/90 sm:text-lg">
               {unlocks.map((item) => (
                 <li key={item}>{item}</li>
               ))}

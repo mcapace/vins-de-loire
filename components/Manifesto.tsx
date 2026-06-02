@@ -32,7 +32,7 @@ export default function Manifesto() {
             </h2>
 
             <p
-              className={`max-w-2xl text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+              className={`max-w-2xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Between flourishing estates and intimate cellars, between reds,
               rosés, and whites, between sparkling wines and noble sweets, the
@@ -41,7 +41,7 @@ export default function Manifesto() {
               extraordinary geological mosaic.
             </p>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-loire-blue sm:mt-8 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-loire-blue-deep/90 sm:mt-8 sm:text-xl">
               From water lands to volcanic soils, the Loire reminds us that
               nature and craft move together. The vineyards of Loire are a
               bridge between UNESCO landscapes, singular terroirs, and grape

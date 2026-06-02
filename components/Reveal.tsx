@@ -28,9 +28,9 @@ export default function Reveal({
   return (
     <Component
       className={className}
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 1, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -5% 0px" }}
       transition={{
         ...revealTransition,
         delay: delay * staggerChildren,

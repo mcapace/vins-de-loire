@@ -41,7 +41,7 @@ export default function Sustainability() {
               </h2>
 
               <p
-                className={`text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+                className={`text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
               >
                 The vineyards of Loire are advancing together:{" "}
                 <span className="font-semibold text-loire-blue-deep">
@@ -61,7 +61,7 @@ export default function Sustainability() {
                 <p className="font-display text-4xl font-semibold leading-none text-loire-blue-deep sm:text-5xl">
                   85%
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-loire-blue sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-loire-blue-deep/85 sm:text-base">
                   Vineyards certified organic or environmentally sustainable
                   today
                 </p>
@@ -71,7 +71,7 @@ export default function Sustainability() {
                 <p className="font-display text-4xl font-semibold leading-none text-loire-accent-forest sm:text-5xl">
                   2030
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-loire-blue sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-loire-blue-deep/85 sm:text-base">
                   Target for 100% certified organic or sustainable vineyards
                 </p>
               </div>

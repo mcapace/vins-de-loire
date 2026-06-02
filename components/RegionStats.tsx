@@ -13,13 +13,14 @@ export default function RegionStats() {
 
   return (
     <section
+      id="region"
       className={`relative overflow-hidden bg-loire-blue text-white ${sectionPaddingCompact}`}
       aria-labelledby="region-stats-heading"
     >
       <Strates className="absolute inset-0 opacity-25" />
       <SectionContainer className="relative z-10">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-pale sm:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
             The region
           </p>
           <h2
@@ -47,7 +48,7 @@ export default function RegionStats() {
                 reduceMotion
                   ? undefined
                   : {
-                      hidden: { opacity: 0, y: 20 },
+                      hidden: { opacity: 1, y: 20 },
                       visible: {
                         opacity: 1,
                         y: 0,
@@ -60,7 +61,7 @@ export default function RegionStats() {
               <p className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl">
                 {stat.value}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-loire-blue-pale sm:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-white/85 sm:text-base">
                 {stat.label}
               </p>
             </motion.li>
@@ -68,7 +69,7 @@ export default function RegionStats() {
         </motion.ul>
 
         <Reveal delay={2}>
-          <p className="mt-12 max-w-3xl text-sm leading-relaxed text-loire-blue-light sm:mt-14 sm:text-base">
+          <p className="mt-12 max-w-3xl text-sm leading-relaxed text-white/80 sm:mt-14 sm:text-base">
             {regionStatsFootnote}
           </p>
         </Reveal>

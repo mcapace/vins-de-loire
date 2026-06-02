@@ -32,7 +32,7 @@ export default function Territories() {
             From the Loire Océanique to the Loire Volcanique
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             The Loire vineyards stretch from the Atlantic to the volcanic heart
             of France: from Nantes to Clermont-Ferrand, from oceanic freshness
@@ -57,7 +57,7 @@ export default function Territories() {
                 reduceMotion
                   ? undefined
                   : {
-                      hidden: { opacity: 0, y: 24 },
+                      hidden: { opacity: 1, y: 24 },
                       visible: {
                         opacity: 1,
                         y: 0,
@@ -90,7 +90,7 @@ export default function Territories() {
         </motion.ul>
 
         <Reveal delay={1}>
-          <p className="mt-8 text-sm leading-relaxed text-loire-blue sm:mt-10 sm:text-base">
+          <p className="mt-8 text-sm leading-relaxed text-loire-blue-deep/80 sm:mt-10 sm:text-base">
             Stylized journey along the Loire. The official appellation map and
             detailed territory tools are available inside the Trade Portal.
           </p>

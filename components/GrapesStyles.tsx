@@ -14,6 +14,7 @@ export default function GrapesStyles() {
 
   return (
     <section
+      id="grapes"
       className={`bg-white text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="grapes-heading"
     >
@@ -29,7 +30,7 @@ export default function GrapesStyles() {
             Six expressions of one river
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             Thirty-three grape varieties thrive across the Loire vineyards.
             These six define the identity trade professionals meet most often
@@ -54,7 +55,7 @@ export default function GrapesStyles() {
                 reduceMotion
                   ? undefined
                   : {
-                      hidden: { opacity: 0, y: 24 },
+                      hidden: { opacity: 1, y: 24 },
                       visible: {
                         opacity: 1,
                         y: 0,
@@ -80,7 +81,7 @@ export default function GrapesStyles() {
                   <h3 className="font-display text-2xl font-semibold text-loire-blue-deep">
                     {card.name}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-loire-blue sm:text-base">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-loire-blue-deep/90 sm:text-base">
                     {card.description}
                   </p>
                   <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-loire-blue-mid">

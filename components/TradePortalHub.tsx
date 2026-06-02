@@ -6,13 +6,11 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
-import Image from "next/image";
+import CoBrandLockup from "@/components/CoBrandLockup";
 import Link from "next/link";
 
 const HUB_IMAGE =
   "/images/InterLoire-Vins-de-Loire-gaellebcphotographe-21.jpg";
-
-const WINE_SPECTATOR_LOGO = "/logos/wine-spectator/wine-spectator-white.png";
 
 const hubHighlights = [
   "Recent Wine Spectator ratings from Loire Valley editor Kristen Bieler",
@@ -31,34 +29,28 @@ export default function TradePortalHub() {
       <SectionContainer>
         <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
           <Reveal className="min-w-0 lg:col-span-6">
-            <Image
-              src={WINE_SPECTATOR_LOGO}
-              alt="Wine Spectator"
-              width={280}
-              height={42}
-              className="h-auto w-40 sm:w-48"
-            />
+            <CoBrandLockup variant="on-dark" size="md" className="justify-start" />
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-pale sm:text-sm">
-              Loire Wines × Wine Spectator
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
+              Trade portal
             </p>
 
             <h2
               id="trade-hub-heading"
-              className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-tight ${spaceEyebrowToHeadline}`}
+              className={`font-display text-3xl font-semibold leading-snug tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight ${spaceEyebrowToHeadline}`}
             >
               Your trade hub for the Loire
             </h2>
 
             <p
-              className={`max-w-xl text-lg leading-relaxed text-loire-blue-faint sm:text-xl ${spaceHeadlineToBody}`}
+              className={`max-w-xl text-lg leading-relaxed text-white/95 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Discover Loire wines through a destination built exclusively for
               the trade. Complimentary registration unlocks the tools you need
               to sell, teach, and list with confidence.
             </p>
 
-            <ul className="mt-8 space-y-3 text-base leading-relaxed text-loire-blue-pale sm:text-lg">
+            <ul className="mt-8 space-y-3 text-base leading-relaxed text-white/90 sm:text-lg">
               {hubHighlights.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span

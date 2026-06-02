@@ -90,7 +90,7 @@ function RatingsComingSoon() {
         <p className="mt-4 font-display text-2xl font-semibold text-loire-blue-deep sm:text-3xl">
           Scored wines arrive with editorial approval
         </p>
-        <p className="mt-4 text-base leading-relaxed text-loire-blue sm:text-lg">
+        <p className="mt-4 text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
           Wine Spectator ratings from Kristen Bieler will populate this section
           as soon as the approved list is released. Register for trade access to
           get alerts and full tasting notes.
@@ -111,6 +111,7 @@ export default function WineGrid() {
 
   return (
     <section
+      id="ratings"
       className={`bg-white text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="wine-grid-heading"
     >
@@ -127,7 +128,7 @@ export default function WineGrid() {
               The Loire, scored by Wine Spectator
             </h2>
             <p
-              className={`text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+              className={`text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
             >
               Recent Wine Spectator ratings from Loire Valley editor Kristen
               Bieler. Explore scores, tasting notes, and producers as the

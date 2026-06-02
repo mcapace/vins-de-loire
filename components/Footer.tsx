@@ -1,12 +1,7 @@
-import Image from "next/image";
+import CoBrandLockup from "@/components/CoBrandLockup";
 import SectionContainer from "@/components/SectionContainer";
 import { sectionPaddingCompact } from "@/lib/section";
 import { sponsorDisclosure } from "@/lib/site";
-
-const VINS_DE_LOIRE_LOGO =
-  "/logos/Logo-Vins-de-Loire-Bleu/Logo-Vins-de-Loire-BLEU.png";
-
-const WINE_SPECTATOR_LOGO = "/logos/wine-spectator/wine-spectator-white.png";
 
 const footerLinks = [
   { label: "Loire Wines", href: "#" },
@@ -21,42 +16,30 @@ export default function Footer() {
 
   return (
     <footer
-      className={`border-t border-loire-blue-pale/20 bg-loire-blue-deep text-loire-blue-faint ${sectionPaddingCompact}`}
+      className={`border-t border-white/10 bg-loire-blue-deep text-white/90 ${sectionPaddingCompact}`}
     >
       <SectionContainer>
-        <p className="text-center font-display text-xl font-medium leading-relaxed text-loire-blue-pale sm:text-left sm:text-2xl">
+        <p className="text-center font-display text-xl font-medium leading-relaxed text-white sm:text-left sm:text-2xl">
           Explore, learn, and connect. Your Loire journey starts here.
         </p>
 
-        <div className="mt-10 flex min-w-0 flex-col items-center gap-10 sm:mt-12 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
-          <Image
-            src={VINS_DE_LOIRE_LOGO}
-            alt="Vins de Loire logo in brand blue"
-            width={240}
-            height={80}
-            className="h-auto w-44 sm:w-52"
-          />
-
-          <Image
-            src={WINE_SPECTATOR_LOGO}
-            alt="Wine Spectator"
-            width={320}
-            height={48}
-            className="h-auto w-48 sm:w-56 md:w-64"
-          />
-        </div>
+        <CoBrandLockup
+          variant="on-dark"
+          size="md"
+          className="mt-10 justify-center sm:mt-12 sm:justify-start"
+        />
 
         <p
-          className="mt-10 max-w-3xl text-center text-sm leading-relaxed text-loire-blue-pale sm:mt-12 sm:text-left sm:text-base"
+          className="mt-10 max-w-3xl text-center text-sm leading-relaxed text-white/85 sm:mt-12 sm:text-left sm:text-base"
           data-legal-review="pending"
         >
           {sponsorDisclosure}
-          <span className="mt-2 block text-xs uppercase tracking-[0.14em] text-loire-blue-light">
+          <span className="mt-2 block text-xs uppercase tracking-[0.14em] text-white/60">
             Legal review pending
           </span>
         </p>
 
-        <p className="mt-6 text-center text-xs leading-relaxed text-loire-blue-light sm:text-left sm:text-sm">
+        <p className="mt-6 text-center text-xs leading-relaxed text-white/70 sm:text-left sm:text-sm">
           Photography: Gaelle BC Photographe for InterLoire / Vins de Loire
         </p>
 
@@ -70,7 +53,7 @@ export default function Footer() {
                 {/* TODO: Replace placeholder href with final URLs */}
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-loire-blue-pale underline-offset-4 transition-colors duration-200 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  className="text-sm font-medium text-white/85 underline-offset-4 transition-colors duration-200 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   {link.label}
                 </a>
@@ -79,7 +62,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <p className="mt-10 text-center text-xs leading-relaxed text-loire-blue-light sm:mt-12 sm:text-left sm:text-sm">
+        <p className="mt-10 text-center text-xs leading-relaxed text-white/65 sm:mt-12 sm:text-left sm:text-sm">
           © {year} Wine Spectator. All rights reserved.
         </p>
       </SectionContainer>
