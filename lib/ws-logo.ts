@@ -16,19 +16,21 @@ export const WS_LOGO_ASPECT = 2607 / 706;
 
 /** Wine Spectator wordmark cap height in lockups. */
 export const COBRAND_WS_HEIGHT = {
-  sm: 20,
+  /** Sticky header — both marks share this exact cap height. */
+  nav: 32,
+  sm: 24,
   md: 26,
   lg: 34,
   xl: 42,
 } as const;
 
 /**
- * Loire PNG has padding; slight bump over WS cap height. Keep close to 1.x so
- * flex center alignment keeps both wordmarks on one optical line.
+ * Loire PNG has padding; use 1.0 in nav for matched height, slight bump elsewhere.
  */
 export const LOIRE_OPTICAL_SCALE: Record<keyof typeof COBRAND_WS_HEIGHT, number> =
   {
-    sm: 1.3,
+    nav: 1,
+    sm: 1.26,
     md: 1.28,
     lg: 1.26,
     xl: 1.24,
@@ -36,6 +38,7 @@ export const LOIRE_OPTICAL_SCALE: Record<keyof typeof COBRAND_WS_HEIGHT, number>
 
 /** Fine-tune vertical centering (px) after items-center layout. */
 export const LOIRE_OFFSET_Y: Record<keyof typeof COBRAND_WS_HEIGHT, number> = {
+  nav: 0,
   sm: -1,
   md: -1,
   lg: -2,
@@ -43,6 +46,7 @@ export const LOIRE_OFFSET_Y: Record<keyof typeof COBRAND_WS_HEIGHT, number> = {
 };
 
 export const WS_OFFSET_Y: Record<keyof typeof COBRAND_WS_HEIGHT, number> = {
+  nav: 0,
   sm: 0,
   md: 0,
   lg: 1,
@@ -63,7 +67,10 @@ export type CoBrandMetrics = {
 
 export function getCoBrandMetrics(size: CoBrandLogoSize): CoBrandMetrics {
   const wsHeight = COBRAND_WS_HEIGHT[size];
-  const loireHeight = Math.round(wsHeight * LOIRE_OPTICAL_SCALE[size]);
+  const loireHeight =
+    LOIRE_OPTICAL_SCALE[size] === 1
+      ? wsHeight
+      : Math.round(wsHeight * LOIRE_OPTICAL_SCALE[size]);
 
   return {
     wsHeight,

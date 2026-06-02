@@ -19,7 +19,7 @@ export default function Manifesto() {
       <SilhouettePlate
         src={siteImages.manifesto.src}
         alt={siteImages.manifesto.alt}
-        variant="portal"
+        variant="fade-left"
         tone="cream"
         wrapperClassName="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52vw,680px)] lg:block"
         className="h-full w-full"

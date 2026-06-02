@@ -75,7 +75,7 @@ export default function GrapesStyles() {
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep via-loire-blue-deep/45 to-transparent"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/90 via-loire-blue-deep/30 to-transparent"
                   aria-hidden
                 />
 

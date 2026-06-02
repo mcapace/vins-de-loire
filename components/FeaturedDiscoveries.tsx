@@ -50,15 +50,15 @@ export default function FeaturedDiscoveries() {
                 <SilhouettePlate
                   src={card.image}
                   alt={card.imageAlt}
-                  variant="fade-bottom"
+                  variant="full"
                   tone="dark"
                   wrapperClassName="absolute inset-0"
-                  className="h-full w-full transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="transition-transform duration-700 group-hover:scale-[1.03]"
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep via-loire-blue-deep/55 to-loire-blue-deep/10"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/35 to-transparent"
                   aria-hidden
                 />
 

@@ -18,7 +18,7 @@ type CoBrandLockupProps = {
 };
 
 /**
- * Dual-brand row: Vins de Loire × Wine Spectator (vertically centered).
+ * Dual-brand row: Vins de Loire × Wine Spectator (matched cap height per size).
  */
 export default function CoBrandLockup({
   variant = "on-dark",
@@ -33,25 +33,33 @@ export default function CoBrandLockup({
     loireHeight,
     separatorPx,
     loireWidth,
+    wsWidth,
     loireOffsetY,
     wsOffsetY,
   } = getCoBrandMetrics(size);
 
+  const rowHeight = Math.max(wsHeight, loireHeight);
+
   return (
     <div
-      className={`flex flex-wrap items-center justify-center gap-3 overflow-visible sm:justify-start sm:gap-3.5 ${className}`.trim()}
+      className={`flex items-center justify-center gap-3 overflow-visible sm:justify-start sm:gap-3.5 ${className}`.trim()}
+      style={{ minHeight: rowHeight }}
       aria-label="Vins de Loire and Wine Spectator"
     >
-      <div className="flex shrink-0 items-center overflow-visible">
+      <div
+        className="flex shrink-0 items-center justify-center overflow-visible"
+        style={{ height: rowHeight, width: loireWidth }}
+      >
         <Image
           src={loireSrc}
           alt="Vins de Loire"
           width={loireWidth}
           height={loireHeight}
           priority={priority}
-          className="block w-auto max-w-none object-contain object-center"
+          className="block max-h-full w-auto max-w-none object-contain object-center"
           style={{
             height: loireHeight,
+            maxHeight: rowHeight,
             width: "auto",
             transform: loireOffsetY
               ? `translateY(${loireOffsetY}px)`
@@ -61,21 +69,25 @@ export default function CoBrandLockup({
       </div>
 
       <span
-        className={`flex shrink-0 items-center font-light leading-none ${onDark ? "text-white/45" : "text-loire-blue-mid/50"}`}
-        style={{ fontSize: separatorPx, height: wsHeight }}
+        className={`flex shrink-0 items-center self-center font-light leading-none ${onDark ? "text-white/45" : "text-loire-blue-mid/50"}`}
+        style={{ fontSize: separatorPx }}
         aria-hidden
       >
         ×
       </span>
 
-      <div className="flex shrink-0 items-center overflow-visible">
+      <div
+        className="flex shrink-0 items-center justify-center overflow-visible"
+        style={{ height: rowHeight, width: wsWidth }}
+      >
         <WsMark
           height={wsHeight}
           invert={onDark}
           priority={priority}
           opacity={onDark ? 0.92 : 1}
-          className="block max-w-none object-contain object-center"
+          className="block max-h-full max-w-none object-contain object-center"
           style={{
+            maxHeight: rowHeight,
             transform: wsOffsetY ? `translateY(${wsOffsetY}px)` : undefined,
           }}
         />

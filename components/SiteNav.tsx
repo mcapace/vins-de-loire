@@ -43,7 +43,7 @@ export default function SiteNav() {
 
         <div className="mx-auto flex w-full min-w-0 max-w-7xl items-center justify-between gap-3 px-5 py-3.5 sm:gap-4 sm:px-8 sm:py-4 lg:px-12">
           <Link href="#" className="shrink-0" aria-label="Vins de Loire home">
-            <CoBrandLockup variant="on-dark" size="sm" />
+            <CoBrandLockup variant="on-dark" size="nav" priority />
           </Link>
 
           <nav

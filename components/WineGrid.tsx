@@ -86,7 +86,7 @@ function RatingsComingSoon() {
       />
 
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/40 lg:via-white/85 lg:to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/75 to-white/25 lg:via-white/60 lg:to-transparent"
         aria-hidden
       />
 

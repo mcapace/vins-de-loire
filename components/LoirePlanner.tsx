@@ -50,7 +50,7 @@ function TradePanel() {
         <SilhouettePlate
           src={siteImages.planner.trade.src}
           alt={siteImages.planner.trade.alt}
-          variant="portal"
+          variant="full"
           tone="cream"
           wrapperClassName="absolute inset-0"
           className="h-full w-full"
@@ -104,7 +104,7 @@ function RatingsPanel() {
         sizes="100vw"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/90 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/70 to-transparent"
         aria-hidden
       />
       <div className="relative z-10 flex min-h-[inherit] flex-col justify-center px-2 py-8 sm:px-4 lg:max-w-md">

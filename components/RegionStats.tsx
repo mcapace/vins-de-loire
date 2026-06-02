@@ -34,10 +34,10 @@ export default function RegionStats() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-35 motion-safe:scale-105"
+          className="object-cover object-center opacity-50 motion-safe:scale-105"
           overlayClassName="opacity-0"
         />
-        <div className="absolute inset-0 bg-loire-blue-deep/82" />
+        <div className="absolute inset-0 bg-loire-blue-deep/70" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_40%,rgb(39_49_108/0.45),transparent_65%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-loire-blue-deep via-loire-blue/40 to-loire-blue-deep" />
       </div>
