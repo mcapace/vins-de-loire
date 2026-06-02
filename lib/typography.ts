@@ -29,14 +29,30 @@ export const typeStatRegionValue =
   "font-stat text-[1.75rem] font-normal leading-[0.92] tracking-[-0.04em] text-white sm:text-[2.25rem]";
 
 export const typeStatRegionHero =
-  "font-stat text-[2.5rem] font-normal leading-[0.9] tracking-[-0.04em] text-white sm:text-4xl lg:text-[3.25rem]";
+  "font-stat text-[2.25rem] font-normal leading-none tracking-[-0.04em] text-white sm:text-[2.5rem]";
 
-/** Proof strip & sustainability tiles — mixed numerals + short text */
+export const typeStatRegionSuffix =
+  "font-sans text-[10px] font-normal uppercase tracking-[0.18em] text-white/75 sm:text-[11px]";
+
+export const typeStatRegionCardLabel =
+  "font-sans text-[11px] font-light normal-case leading-snug tracking-[0.01em] text-white/75 sm:text-xs sm:leading-snug";
+
+/** Hero proof strip — Bodoni numerals only (qualifiers use typeStatProofSuffix) */
+export const typeStatProofValue =
+  "font-stat text-[2rem] font-normal leading-[0.92] tracking-[-0.04em] text-loire-blue-deep sm:text-[2.375rem]";
+
+export const typeStatProofSuffix =
+  "font-sans text-[10px] font-normal uppercase tracking-[0.22em] text-loire-blue-mid sm:text-[11px]";
+
+export const typeStatProofLabel =
+  "font-sans text-xs font-light normal-case leading-snug tracking-[0.02em] text-loire-blue-deep/80 sm:text-sm";
+
+/** Sustainability tiles & compact figures */
 export const typeStatCompact =
   "font-stat text-[1.65rem] font-normal leading-[1] tracking-[-0.03em] text-loire-blue-deep sm:text-[2.125rem]";
 
 export const typeStatLabelLight =
-  "font-sans text-[13px] font-normal normal-case leading-snug tracking-[0.02em] text-loire-blue/90 sm:text-sm";
+  "font-sans text-xs font-light normal-case leading-snug tracking-[0.02em] text-loire-blue-deep/80 sm:text-sm";
 
 export const typeStatLabelDark =
   "font-sans text-sm font-normal normal-case leading-relaxed text-white/75 sm:text-[0.9375rem]";
@@ -73,15 +89,15 @@ export const typeNavLink =
 export const typeButton =
   "font-sans text-sm font-normal uppercase tracking-[0.18em]";
 
-/** Titles on photo cards (strong scrim + shadow) */
+/** Titles on photo cards (use with .photo-card-eyebrow for contrast) */
 export const typePhotoCardEyebrow =
-  "font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-loire-accent-gold";
+  "text-shadow-card font-sans text-[10px] font-semibold uppercase tracking-[0.26em] text-white sm:text-[11px]";
 
 export const typePhotoCardTitle =
-  "text-shadow-card font-display text-2xl font-semibold leading-[1.08] tracking-[-0.02em] text-white sm:text-[1.75rem]";
+  "text-shadow-card font-display text-2xl font-semibold leading-[1.08] tracking-[-0.02em] text-white drop-shadow-sm sm:text-[1.75rem]";
 
 export const typePhotoCardTitleLg =
-  "text-shadow-card font-display text-2xl font-semibold leading-[1.08] tracking-[-0.02em] text-white sm:text-3xl";
+  "text-shadow-card font-display text-2xl font-semibold leading-[1.08] tracking-[-0.02em] text-white drop-shadow-sm sm:text-3xl";
 
 export const typePhotoCardBody =
   "text-shadow-card text-sm font-normal leading-relaxed text-white/95 sm:text-base";

@@ -84,7 +84,9 @@ export default function Territories() {
                 <div className="photo-card-scrim" aria-hidden />
 
                 <div className="photo-card-text">
-                  <p className={typePhotoCardEyebrow}>Territory</p>
+                  <p className={`photo-card-eyebrow ${typePhotoCardEyebrow}`}>
+                    Territory
+                  </p>
                   <h3 className={`mt-2 ${typePhotoCardTitleLg}`}>
                     {territory.name}
                   </h3>

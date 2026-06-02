@@ -22,12 +22,12 @@ import {
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
-import { siteImages } from "@/lib/site-images";
+import { territories } from "@/lib/territories";
 
 function TradePanel() {
   return (
-    <div className="grid min-w-0 gap-8 lg:gap-10">
-      <div className="max-w-2xl">
+    <div className="grid min-w-0 gap-10 lg:grid-cols-12 lg:items-start lg:gap-12">
+      <div className="lg:col-span-6">
         <ul className="space-y-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
           {tradePlannerBullets.map((item) => (
             <li key={item} className="flex gap-3">
@@ -47,12 +47,42 @@ function TradePanel() {
         </Link>
       </div>
 
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-loire-blue-faint shadow-md sm:aspect-[2/1] lg:max-w-3xl">
-        <PhotoFill
-          src={siteImages.planner.trade.src}
-          alt={siteImages.planner.trade.alt}
-          sizes="(max-width: 1024px) 100vw, 768px"
-        />
+      <div className="min-w-0 lg:col-span-6">
+        <p className="font-sans text-[11px] font-normal uppercase tracking-[0.22em] text-loire-blue-mid">
+          Along the river
+        </p>
+        <p className="mt-2 font-display text-xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-2xl">
+          Four territories, one toolkit
+        </p>
+        <p className="mt-2 font-sans text-sm font-light leading-relaxed text-loire-blue-deep/85 sm:text-base">
+          Preview the valley from the Atlantic to the volcanic interior. The
+          official appellation map unlocks inside the Trade Portal.
+        </p>
+
+        <ul className="mt-5 grid min-w-0 grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
+          {territories.map((territory) => (
+            <li key={territory.name}>
+              <Link
+                href="#territories"
+                className="group relative block aspect-[5/4] overflow-hidden rounded-sm border border-loire-blue-faint/80 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-loire-blue-deep"
+              >
+                <PhotoFill
+                  src={territory.image}
+                  alt={territory.imageAlt}
+                  sizes="(max-width: 1024px) 45vw, 280px"
+                  imageClassName="motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.04]"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/90 via-loire-blue-deep/25 to-transparent"
+                  aria-hidden
+                />
+                <p className="absolute inset-x-0 bottom-0 z-10 px-3 py-2.5 font-display text-base font-medium tracking-[-0.02em] text-white sm:px-3.5 sm:py-3 sm:text-lg">
+                  {territory.name}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -90,30 +120,39 @@ function TerritoriesPanel() {
 
 function RatingsPanel() {
   return (
-    <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
-      <div className="lg:col-span-5">
-        <p className={typeEyebrowLight}>Publishing soon</p>
-        <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-3xl">
-          The Loire, scored by Wine Spectator
-        </p>
-        <p className="mt-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
-          Ratings from Kristen Bieler will populate as soon as the approved list
-          is released. Register for trade access for alerts and full notes.
-        </p>
-        <Link
-          href="#ratings"
-          className={`mt-6 inline-flex ${typeButton} text-loire-blue hover:text-loire-blue-deep`}
-        >
-          View ratings section →
-        </Link>
-      </div>
+    <div className="overflow-hidden rounded-sm border border-loire-blue-faint bg-white/60 editorial-glass-cream">
+      <div className="grid min-w-0 gap-8 p-6 sm:p-8 lg:grid-cols-12 lg:items-center lg:gap-10 lg:p-10">
+        <div className="lg:col-span-7">
+          <p className={typeEyebrowLight}>Publishing soon</p>
+          <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-3xl">
+            The Loire, scored by Wine Spectator
+          </p>
+          <p className="mt-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
+            Ratings from Kristen Bieler will populate as soon as the approved
+            list is released. Register for trade access for alerts and full
+            notes.
+          </p>
+          <Link
+            href="#ratings"
+            className={`mt-6 inline-flex ${typeButton} text-loire-blue hover:text-loire-blue-deep`}
+          >
+            View ratings section →
+          </Link>
+        </div>
 
-      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint shadow-md lg:col-span-7 lg:aspect-[16/10]">
-        <PhotoFill
-          src={siteImages.planner.ratings.src}
-          alt={siteImages.planner.ratings.alt}
-          sizes="(max-width: 1024px) 100vw, 58vw"
-        />
+        <div className="flex min-w-0 items-center justify-center lg:col-span-5">
+          <div
+            className="flex aspect-square w-full max-w-[11rem] flex-col items-center justify-center rounded-full border-2 border-dashed border-loire-blue-pale/60 bg-loire-accent-cream/90 px-6 text-center shadow-sm sm:max-w-[12.5rem]"
+            aria-hidden
+          >
+            <p className="font-stat text-4xl font-normal leading-none tracking-[-0.04em] text-loire-blue-deep sm:text-5xl">
+              WS
+            </p>
+            <p className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-loire-blue-mid">
+              Scores incoming
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

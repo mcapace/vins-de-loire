@@ -84,7 +84,7 @@ export default function GrapesStyles() {
                   <p className={`mt-2 line-clamp-3 ${typePhotoCardBody}`}>
                     {card.description}
                   </p>
-                  <p className={`mt-4 ${typePhotoCardEyebrow}`}>
+                  <p className={`photo-card-eyebrow mt-4 ${typePhotoCardEyebrow}`}>
                     {card.heartland}
                   </p>
                 </div>

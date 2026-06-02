@@ -74,11 +74,12 @@ body {
 
 .text-shadow-card {
   text-shadow:
-    0 1px 3px rgb(0 0 0 / 0.65),
-    0 4px 24px rgb(0 0 0 / 0.55);
+    0 1px 2px rgb(0 0 0 / 0.9),
+    0 2px 10px rgb(0 0 0 / 0.8),
+    0 4px 28px rgb(0 0 0 / 0.7);
 }
 
-/* Photo cards: keep titles legible over busy vineyard imagery */
+/* Photo cards: legible titles over bright vineyard foliage */
 .photo-card-scrim {
   pointer-events: none;
   position: absolute;
@@ -86,10 +87,12 @@ body {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgb(29 43 80 / 0.12) 0%,
-    transparent 38%,
-    rgb(29 43 80 / 0.55) 68%,
-    rgb(29 43 80 / 0.97) 100%
+    rgb(29 43 80 / 0.1) 0%,
+    transparent 30%,
+    rgb(29 43 80 / 0.5) 50%,
+    rgb(29 43 80 / 0.82) 65%,
+    rgb(29 43 80 / 0.98) 82%,
+    rgb(29 43 80 / 1) 100%
   );
 }
 
@@ -98,13 +101,28 @@ body {
   inset-inline: 0;
   bottom: 0;
   z-index: 10;
-  padding: 5rem 1.5rem 1.75rem;
+  padding: 6.5rem 1.5rem 1.75rem;
+  background: linear-gradient(
+    to top,
+    rgb(29 43 80 / 1) 0%,
+    rgb(29 43 80 / 0.97) 40%,
+    rgb(29 43 80 / 0.85) 65%,
+    transparent 100%
+  );
 }
 
 @media (min-width: 640px) {
   .photo-card-text {
-    padding: 5.5rem 1.75rem 2rem;
+    padding: 7rem 1.75rem 2rem;
   }
+}
+
+.photo-card-eyebrow {
+  display: inline-block;
+  border-left: 3px solid var(--color-loire-accent-gold);
+  background: rgb(29 43 80 / 0.94);
+  padding: 0.4rem 0.65rem 0.4rem 0.55rem;
+  box-shadow: 0 2px 14px rgb(0 0 0 / 0.4);
 }
 
 .hero-scrim {

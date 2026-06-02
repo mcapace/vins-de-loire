@@ -60,7 +60,9 @@ export default function FeaturedDiscoveries() {
                 <div className="photo-card-scrim" aria-hidden />
 
                 <div className="photo-card-text">
-                  <p className={typePhotoCardEyebrow}>{card.category}</p>
+                  <p className={`photo-card-eyebrow ${typePhotoCardEyebrow}`}>
+                    {card.category}
+                  </p>
                   <h3 className={`mt-3 ${typePhotoCardTitle}`}>{card.title}</h3>
                   <p className={`mt-3 max-w-[28ch] ${typePhotoCardBody}`}>
                     {card.excerpt}

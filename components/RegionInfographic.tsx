@@ -8,8 +8,9 @@ import {
   type RegionStatIcon,
 } from "@/lib/region-stats";
 import {
-  typeStatLabelDark,
+  typeStatRegionCardLabel,
   typeStatRegionHero,
+  typeStatRegionSuffix,
   typeStatRegionValue,
 } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
@@ -99,33 +100,43 @@ function RegionStatIconSvg({
 
 function StatCard({ stat }: { stat: RegionStat }) {
   const accent = regionAccentStyles[stat.accent];
-  const isRank = stat.value === "#1";
+  const isRank = stat.primary === "#1";
+  const ariaLabel = [stat.primary, stat.suffix, stat.label]
+    .filter(Boolean)
+    .join(": ");
 
   return (
     <article
-      className={`group relative w-[min(100%,12.5rem)] sm:w-48 ${stat.id === "appellations" ? "sm:w-52" : ""}`}
+      className="group relative w-[13.75rem] max-w-full sm:w-[14.5rem]"
+      aria-label={ariaLabel}
     >
       <div
         className={`pointer-events-none absolute -inset-1 rounded-2xl opacity-0 blur-lg transition-opacity duration-300 motion-safe:group-hover:opacity-50 ${accent.fill}`}
         aria-hidden
       />
-      <div className="relative rounded-2xl border border-white/15 bg-loire-blue-deep/80 p-4 shadow-lg backdrop-blur-md transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5">
-        <div className="flex items-start justify-between gap-2">
+      <div className="relative flex h-full min-h-[10.5rem] flex-col rounded-2xl border border-white/15 bg-loire-blue-deep/80 p-4 shadow-lg backdrop-blur-md transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5 sm:min-h-[11rem] sm:p-[1.125rem]">
+        <div className="flex min-w-0 items-start gap-2.5">
           <span
-            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full ring-2 ${accent.ring} ${accent.fill} ${accent.icon}`}
+            className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full ring-2 ${accent.ring} ${accent.fill} ${accent.icon}`}
           >
-            <RegionStatIconSvg icon={stat.icon} className="h-5 w-5" />
+            <RegionStatIconSvg icon={stat.icon} className="h-[1.125rem] w-[1.125rem]" />
           </span>
-          <span className="rounded-full bg-white/10 px-2 py-0.5 font-sans text-[9px] font-medium uppercase tracking-[0.18em] text-white/80">
+          <span className="min-w-0 rounded-full bg-white/10 px-2 py-0.5 font-sans text-[8px] font-medium uppercase leading-tight tracking-[0.14em] text-white/80 sm:text-[9px]">
             {stat.tag}
           </span>
         </div>
-        <p
-          className={`mt-3 ${isRank ? typeStatRegionHero : typeStatRegionValue} !text-[2rem] sm:!text-[2.25rem]`}
-        >
-          {stat.value}
-        </p>
-        <p className={`mt-2 text-pretty ${typeStatLabelDark}`}>{stat.label}</p>
+
+        <div className="mt-auto min-w-0 pt-4">
+          <p className={isRank ? typeStatRegionHero : typeStatRegionValue}>
+            {stat.primary}
+          </p>
+          {stat.suffix ? (
+            <p className={`mt-1 ${typeStatRegionSuffix}`}>{stat.suffix}</p>
+          ) : null}
+          <p className={`mt-2 line-clamp-4 text-pretty ${typeStatRegionCardLabel}`}>
+            {stat.label}
+          </p>
+        </div>
       </div>
     </article>
   );
@@ -228,7 +239,7 @@ export default function RegionInfographic() {
 
       {/* Desktop: river map */}
       <motion.div
-        className="relative hidden min-h-[32rem] lg:block xl:min-h-[34rem]"
+        className="relative hidden min-h-[34rem] lg:block xl:min-h-[36rem]"
         initial={reduceMotion ? false : "hidden"}
         whileInView={reduceMotion ? undefined : "visible"}
         viewport={{ once: true, margin: "-6% 0px" }}
@@ -239,7 +250,7 @@ export default function RegionInfographic() {
       >
         <RiverPathHorizontal animate={animateRiver} />
 
-        <ul className="relative mx-auto h-[32rem] max-w-6xl xl:h-[34rem]">
+        <ul className="relative mx-auto h-[34rem] max-w-6xl xl:h-[36rem]">
           {regionStats.map((stat) => {
             const top = stat.lane === "above" ? "6%" : "52%";
             return (

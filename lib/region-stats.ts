@@ -16,7 +16,10 @@ export type RegionStatAccent =
 
 export type RegionStat = {
   id: string;
-  value: string;
+  /** Bodoni figure */
+  primary: string;
+  /** Jost qualifier — keeps long copy out of the stat serif */
+  suffix?: string;
   label: string;
   /** Short badge on the infographic card */
   tag: string;
@@ -35,7 +38,8 @@ export const regionJourney = {
 export const regionStats: readonly RegionStat[] = [
   {
     id: "appellations",
-    value: "34 AOP + 1 IGP",
+    primary: "34",
+    suffix: "AOP + 1 IGP",
     label: "Appellations from the Nantais to the Auvergne",
     tag: "Appellations",
     icon: "appellation",
@@ -45,7 +49,8 @@ export const regionStats: readonly RegionStat[] = [
   },
   {
     id: "departments",
-    value: "14 departments",
+    primary: "14",
+    suffix: "Departments",
     label: "Across the heart of France",
     tag: "Departments",
     icon: "territory",
@@ -55,7 +60,7 @@ export const regionStats: readonly RegionStat[] = [
   },
   {
     id: "grapes",
-    value: "33",
+    primary: "33",
     label: "Grape varieties — a living mosaic of terroirs",
     tag: "Varieties",
     icon: "grapes",
@@ -65,7 +70,7 @@ export const regionStats: readonly RegionStat[] = [
   },
   {
     id: "hectares",
-    value: "42,000",
+    primary: "42,000",
     label: "Hectares under vine along the river",
     tag: "Hectares",
     icon: "vineyard",
@@ -75,8 +80,8 @@ export const regionStats: readonly RegionStat[] = [
   },
   {
     id: "world-first",
-    value: "#1",
-    label: "In the world for Cabernet Franc, Chenin Blanc & Melon Blanc",
+    primary: "#1",
+    label: "World leader for Cab Franc, Chenin Blanc & Melon Blanc",
     tag: "World #1",
     icon: "world-first",
     accent: "amber",
@@ -85,8 +90,8 @@ export const regionStats: readonly RegionStat[] = [
   },
   {
     id: "france-first",
-    value: "#1",
-    label: "In France for sparkling (outside Champagne) & AOP rosé",
+    primary: "#1",
+    label: "France's #1 for sparkling (ex-Champagne) & AOP rosé",
     tag: "France #1",
     icon: "france-first",
     accent: "rose",
