@@ -1,5 +1,5 @@
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import SectionContainer from "@/components/SectionContainer";
 import {
   sectionPadding,
@@ -74,29 +74,35 @@ function WineCard({ wine }: { wine: Wine }) {
 
 function RatingsComingSoon() {
   return (
-    <div className="mt-12 grid min-w-0 gap-8 lg:grid-cols-12 lg:gap-12">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-5 lg:aspect-auto lg:min-h-[320px]">
-        <MoodyImage
-          src={siteImages.ratingsEmpty.src}
-          alt={siteImages.ratingsEmpty.alt}
-          fill
-          sizes="(max-width: 1024px) 100vw, 40vw"
-        />
-      </div>
+    <div className="relative mt-12 min-h-[28rem] overflow-hidden sm:min-h-[32rem]">
+      <SilhouettePlate
+        src={siteImages.ratingsEmpty.src}
+        alt={siteImages.ratingsEmpty.alt}
+        variant="fade-right"
+        tone="light"
+        wrapperClassName="absolute inset-0"
+        className="h-full w-full"
+        sizes="100vw"
+      />
 
-      <div className="flex flex-col justify-center rounded-sm border border-dashed border-loire-blue-light bg-loire-accent-cream/40 p-8 sm:p-10 lg:col-span-7">
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/40 lg:via-white/85 lg:to-transparent"
+        aria-hidden
+      />
+
+      <div className="relative z-10 flex min-h-[inherit] flex-col justify-center px-6 py-14 sm:px-10 sm:py-16 lg:max-w-xl lg:px-14">
         <p className={typeEyebrowLight}>Publishing soon</p>
         <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep sm:text-3xl">
           Scored wines arrive with editorial approval
         </p>
-        <p className="mt-4 text-base leading-relaxed text-loire-blue-deep/90 sm:text-lg">
+        <p className="mt-4 font-sans text-base font-light leading-relaxed text-loire-blue-deep/90 sm:text-lg">
           Wine Spectator ratings from Kristen Bieler will populate this section
           as soon as the approved list is released. Register for trade access to
           get alerts and full tasting notes.
         </p>
         <Link
           href="#trade-portal"
-          className="mt-8 inline-flex min-h-12 w-fit items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-loire-blue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-loire-blue-deep"
+          className="mt-8 inline-flex min-h-12 w-fit items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 text-sm font-normal uppercase tracking-[0.18em] text-white transition-colors duration-200 hover:bg-loire-blue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-loire-blue-deep"
         >
           Enter the Trade Portal
         </Link>

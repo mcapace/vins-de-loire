@@ -1,8 +1,8 @@
 "use client";
 
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import { territories } from "@/lib/territories";
 import {
   sectionPadding,
@@ -19,7 +19,7 @@ export default function Territories() {
   return (
     <section
       id="territories"
-      className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
+      className={`relative overflow-hidden bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="territories-heading"
     >
       <SectionContainer>
@@ -32,7 +32,7 @@ export default function Territories() {
             From the Loire Océanique to the Loire Volcanique
           </h2>
           <p
-            className={`max-w-3xl text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
+            className={`max-w-3xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             The Loire vineyards stretch from the Atlantic to the volcanic heart
             of France: from Nantes to Clermont-Ferrand, from oceanic freshness
@@ -41,7 +41,7 @@ export default function Territories() {
         </Reveal>
 
         <motion.ul
-          className="mt-12 grid min-w-0 grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6"
+          className="mt-12 grid min-w-0 grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-8% 0px" }}
@@ -50,7 +50,7 @@ export default function Territories() {
             visible: { transition: { staggerChildren: staggerChildren } },
           }}
         >
-          {territories.map((territory) => (
+          {territories.map((territory, index) => (
             <motion.li
               key={territory.name}
               variants={
@@ -65,22 +65,32 @@ export default function Territories() {
                       },
                     }
               }
-              className="min-w-0"
+              className={`min-w-0 ${index === 1 || index === 2 ? "lg:mt-8" : ""}`}
             >
-              <article className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-loire-blue-faint shadow-md transition-shadow duration-300 hover:shadow-xl">
-                <MoodyImage
+              <article className="group relative aspect-[3/4] min-h-[18rem] overflow-hidden">
+                <SilhouettePlate
                   src={territory.image}
                   alt={territory.imageAlt}
-                  fill
+                  variant="arch"
+                  tone="dark"
+                  wrapperClassName="absolute inset-0"
+                  className="h-full w-full transition-transform duration-700 group-hover:scale-[1.05]"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  overlayClassName="moody-overlay"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-loire-blue-deep/90 via-loire-blue-deep/25 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-white sm:text-3xl">
+
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/35 to-transparent"
+                  aria-hidden
+                />
+
+                <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
+                  <p className="font-sans text-[10px] font-normal uppercase tracking-[0.3em] text-loire-accent-gold">
+                    Territory
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-medium tracking-[-0.02em] text-white sm:text-3xl">
                     {territory.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-loire-blue-pale sm:text-base">
+                  <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">
                     {territory.descriptor}
                   </p>
                 </div>
@@ -90,7 +100,7 @@ export default function Territories() {
         </motion.ul>
 
         <Reveal delay={1}>
-          <p className="mt-8 text-sm leading-relaxed text-loire-blue-deep/80 sm:mt-10 sm:text-base">
+          <p className="mt-8 text-sm font-light leading-relaxed text-loire-blue-deep/80 sm:mt-10 sm:text-base">
             Stylized journey along the Loire. The official appellation map and
             detailed territory tools are available inside the Trade Portal.
           </p>

@@ -1,7 +1,7 @@
 "use client";
 
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import SectionContainer from "@/components/SectionContainer";
 import {
   plannerTabs,
@@ -46,11 +46,14 @@ function TradePanel() {
           Join the Loire Trade Network
         </Link>
       </div>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-6 lg:aspect-[5/4]">
-        <MoodyImage
+      <div className="relative min-h-[16rem] overflow-hidden lg:col-span-6 lg:min-h-[22rem]">
+        <SilhouettePlate
           src={siteImages.planner.trade.src}
           alt={siteImages.planner.trade.alt}
-          fill
+          variant="portal"
+          tone="cream"
+          wrapperClassName="absolute inset-0"
+          className="h-full w-full"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
@@ -90,16 +93,21 @@ function TerritoriesPanel() {
 
 function RatingsPanel() {
   return (
-    <div className="grid min-w-0 gap-8 lg:grid-cols-12 lg:gap-12">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-loire-blue-faint lg:col-span-5 lg:min-h-[280px] lg:aspect-auto">
-        <MoodyImage
-          src={siteImages.planner.ratings.src}
-          alt={siteImages.planner.ratings.alt}
-          fill
-          sizes="40vw"
-        />
-      </div>
-      <div className="flex flex-col justify-center lg:col-span-7">
+    <div className="relative min-h-[24rem] overflow-hidden">
+      <SilhouettePlate
+        src={siteImages.planner.ratings.src}
+        alt={siteImages.planner.ratings.alt}
+        variant="fade-right"
+        tone="cream"
+        wrapperClassName="absolute inset-0"
+        className="h-full w-full"
+        sizes="100vw"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/90 to-transparent"
+        aria-hidden
+      />
+      <div className="relative z-10 flex min-h-[inherit] flex-col justify-center px-2 py-8 sm:px-4 lg:max-w-md">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-loire-blue-mid">
           Publishing soon
         </p>
@@ -112,7 +120,7 @@ function RatingsPanel() {
         </p>
         <Link
           href="#ratings"
-          className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.12em] text-loire-blue hover:text-loire-blue-deep"
+          className={`mt-6 inline-flex ${typeButton} text-loire-blue hover:text-loire-blue-deep`}
         >
           View ratings section →
         </Link>

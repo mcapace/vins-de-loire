@@ -1,9 +1,8 @@
 "use client";
 
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
-import Strates from "@/components/Strates";
 import SectionContainer from "@/components/SectionContainer";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import { grapeCards } from "@/lib/grapes";
 import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
 import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
@@ -16,7 +15,7 @@ export default function GrapesStyles() {
   return (
     <section
       id="grapes"
-      className={`bg-white text-loire-blue-deep ${sectionPadding}`}
+      className={`relative overflow-hidden bg-loire-accent-cream/40 text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="grapes-heading"
     >
       <SectionContainer>
@@ -38,7 +37,7 @@ export default function GrapesStyles() {
         </Reveal>
 
         <motion.ul
-          className="mt-12 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-8"
+          className="mt-12 grid min-w-0 grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-8% 0px" }}
@@ -47,7 +46,7 @@ export default function GrapesStyles() {
             visible: { transition: { staggerChildren: staggerChildren } },
           }}
         >
-          {grapeCards.map((card) => (
+          {grapeCards.map((card, index) => (
             <motion.li
               key={card.name}
               variants={
@@ -62,32 +61,33 @@ export default function GrapesStyles() {
                       },
                     }
               }
-              className="flex min-w-0"
+              className={`min-w-0 ${index === 1 || index === 4 ? "lg:mt-6" : ""}`}
             >
-              <article className="flex h-full min-w-0 flex-col overflow-hidden border border-loire-blue-faint bg-loire-accent-cream/30 transition-[border-color,box-shadow] duration-200 hover:border-loire-blue-light hover:shadow-lg">
-                <div className="relative aspect-[4/3] w-full">
-                  <MoodyImage
-                    src={card.image}
-                    alt={card.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="relative flex flex-1 flex-col p-6 sm:p-7">
-                  <div className="absolute -top-3 right-4 h-6 w-24 overflow-hidden rounded-sm opacity-60">
-                    <Strates className="h-full w-full" opacity={0.9} />
-                  </div>
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-loire-blue-deep">
+              <article className="group relative aspect-[4/5] min-h-[20rem] overflow-hidden">
+                <SilhouettePlate
+                  src={card.image}
+                  alt={card.imageAlt}
+                  variant="arch"
+                  tone="dark"
+                  wrapperClassName="absolute inset-0"
+                  className="h-full w-full transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep via-loire-blue-deep/45 to-transparent"
+                  aria-hidden
+                />
+
+                <div className="relative z-10 flex h-full flex-col justify-end p-6 sm:p-7">
+                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-white">
                     {card.name}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-loire-blue-deep/90 sm:text-base">
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-white/85 sm:text-base">
                     {card.description}
                   </p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-loire-blue-mid">
-                    Heartland:{" "}
-                    <span className="font-normal normal-case tracking-normal text-loire-blue">
-                      {card.heartland}
-                    </span>
+                  <p className="mt-4 font-sans text-[11px] font-normal uppercase tracking-[0.22em] text-loire-accent-gold">
+                    {card.heartland}
                   </p>
                 </div>
               </article>

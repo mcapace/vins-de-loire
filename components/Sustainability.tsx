@@ -1,11 +1,12 @@
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import {
   sectionPadding,
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import { siteImages } from "@/lib/site-images";
 import {
   typeDisplayLight,
   typeEyebrowLight,
@@ -13,31 +14,43 @@ import {
   typeStatCompact,
 } from "@/lib/typography";
 
-import { siteImages } from "@/lib/site-images";
-
 export default function Sustainability() {
   return (
     <section
       id="sustainability"
-      className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
+      className={`relative overflow-hidden bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="sustainability-heading"
     >
-      <SectionContainer>
-        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
-          <Reveal className="relative aspect-[4/3] w-full min-w-0 overflow-hidden lg:col-span-6 lg:aspect-[5/4]">
-            <MoodyImage
+      <SilhouettePlate
+        src={siteImages.sustainability.src}
+        alt={siteImages.sustainability.alt}
+        variant="fade-right"
+        tone="cream"
+        wrapperClassName="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[58%] lg:block"
+        className="h-full w-full"
+        sizes="58vw"
+      />
+
+      <SectionContainer className="relative z-10">
+        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal
+            className="relative min-h-[20rem] w-full min-w-0 lg:hidden"
+            delay={0}
+          >
+            <SilhouettePlate
               src={siteImages.sustainability.src}
               alt={siteImages.sustainability.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              variant="arch"
+              tone="cream"
+              wrapperClassName="h-full w-full"
+              className="min-h-[20rem] w-full"
+              sizes="100vw"
             />
           </Reveal>
 
-          <Reveal className="min-w-0 lg:col-span-6" delay={1}>
+          <Reveal className="min-w-0 lg:col-span-6 xl:col-span-5">
             <div className="border-l-4 border-loire-accent-forest pl-6 sm:pl-8">
-              <p
-                className={`${typeEyebrowLight} !text-loire-accent-forest`}
-              >
+              <p className={`${typeEyebrowLight} !text-loire-accent-forest`}>
                 A shared commitment
               </p>
 
@@ -64,8 +77,8 @@ export default function Sustainability() {
               </p>
             </div>
 
-            <div className="mt-10 grid min-w-0 grid-cols-2 gap-4 sm:mt-12 sm:gap-6">
-              <div className="rounded-sm bg-loire-accent-sage/25 px-4 py-6 transition-colors duration-200 hover:bg-loire-accent-sage/35 sm:px-6 sm:py-8">
+            <div className="mt-10 grid min-w-0 grid-cols-2 gap-4 sm:mt-12 sm:gap-5">
+              <div className="editorial-glass-cream rounded-sm px-4 py-6 sm:px-6 sm:py-8">
                 <p className={typeStatCompact}>85%</p>
                 <p className={`mt-4 ${typeStatCaptionLight}`}>
                   Vineyards certified organic or environmentally sustainable
@@ -73,7 +86,7 @@ export default function Sustainability() {
                 </p>
               </div>
 
-              <div className="rounded-sm border border-loire-accent-forest/30 bg-loire-accent-sage/15 px-4 py-6 transition-colors duration-200 hover:border-loire-accent-forest/50 sm:px-6 sm:py-8">
+              <div className="editorial-glass-cream rounded-sm border-loire-accent-forest/20 px-4 py-6 sm:px-6 sm:py-8">
                 <p className={`${typeStatCompact} text-loire-accent-forest`}>
                   2030
                 </p>

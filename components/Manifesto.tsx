@@ -1,25 +1,34 @@
-import MoodyImage from "@/components/MoodyImage";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
+import SilhouettePlate from "@/components/SilhouettePlate";
 import {
   sectionPadding,
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
-import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
-
 import { siteImages } from "@/lib/site-images";
+import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
 
 export default function Manifesto() {
   return (
     <section
       id="manifesto"
-      className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
+      className={`relative overflow-hidden bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="manifesto-heading"
     >
-      <SectionContainer>
-        <div className="grid min-w-0 items-start gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
-          <Reveal className="min-w-0 lg:col-span-7 lg:pr-4 xl:pr-8">
+      <SilhouettePlate
+        src={siteImages.manifesto.src}
+        alt={siteImages.manifesto.alt}
+        variant="portal"
+        tone="cream"
+        wrapperClassName="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52vw,680px)] lg:block"
+        className="h-full w-full"
+        sizes="52vw"
+      />
+
+      <SectionContainer className="relative z-10">
+        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="min-w-0 lg:col-span-7 xl:col-span-6">
             <p className={typeEyebrowLight}>Two thousand years in the making</p>
 
             <h2
@@ -46,7 +55,11 @@ export default function Manifesto() {
               varieties that meet as paradoxes and as evidence.
             </p>
 
-            <figure className="relative mt-12 border-l-4 border-loire-blue-mid pl-6 sm:mt-14 sm:pl-8 md:mt-16">
+            <figure className="editorial-glass-cream relative mt-12 rounded-sm px-6 py-8 sm:mt-14 sm:px-8 md:mt-16">
+              <div
+                className="absolute inset-y-4 left-0 w-px bg-loire-accent-gold/70"
+                aria-hidden
+              />
               <blockquote className="font-display text-2xl font-light italic leading-snug tracking-[-0.01em] text-loire-blue-deep sm:text-3xl md:text-4xl md:leading-snug">
                 Openness is our way of life. Sharing with the curious and the
                 initiated is our river journey.
@@ -57,15 +70,23 @@ export default function Manifesto() {
             </figure>
           </Reveal>
 
-          <Reveal className="min-w-0 lg:col-span-5" delay={1}>
-            <div className="relative mx-auto aspect-[2/3] w-full max-w-md overflow-hidden sm:max-w-lg lg:mx-0 lg:max-w-none">
-              <MoodyImage
-                src={siteImages.manifesto.src}
-                alt={siteImages.manifesto.alt}
-                fill
-                sizes="(max-width: 1024px) 90vw, 40vw"
-              />
-            </div>
+          <Reveal
+            className="relative min-h-[22rem] w-full min-w-0 lg:col-span-5 lg:min-h-[34rem] xl:col-span-6"
+            delay={1}
+          >
+            <SilhouettePlate
+              src={siteImages.manifesto.src}
+              alt={siteImages.manifesto.alt}
+              variant="arch"
+              tone="cream"
+              wrapperClassName="h-full w-full lg:hidden"
+              className="h-full min-h-[22rem] w-full"
+              sizes="100vw"
+            />
+            <div
+              className="pointer-events-none absolute -bottom-6 -left-6 hidden h-24 w-24 border border-loire-accent-gold/35 lg:block"
+              aria-hidden
+            />
           </Reveal>
         </div>
       </SectionContainer>

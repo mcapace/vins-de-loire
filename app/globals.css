@@ -94,6 +94,139 @@ body {
   filter: contrast(1.06) saturate(1.12) brightness(0.96);
 }
 
+/* Silhouetted / dissolved editorial plates */
+.silhouette-photo {
+  filter: contrast(1.12) saturate(0.92) brightness(0.88);
+}
+
+.silhouette-overlay {
+  background: linear-gradient(
+    145deg,
+    rgb(29 43 80 / 0.35) 0%,
+    transparent 45%,
+    rgb(237 220 206 / 0.08) 100%
+  );
+}
+
+.silhouette-plate__sheen {
+  background: linear-gradient(
+    125deg,
+    rgb(255 255 255 / 0.14) 0%,
+    transparent 38%,
+    transparent 100%
+  );
+  mix-blend-mode: soft-light;
+}
+
+.silhouette-mask-fade-left {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.15) 18%,
+    #000 42%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.15) 18%,
+    #000 42%,
+    #000 100%
+  );
+}
+
+.silhouette-mask-fade-right {
+  -webkit-mask-image: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.2) 22%,
+    #000 48%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.2) 22%,
+    #000 48%,
+    #000 100%
+  );
+}
+
+.silhouette-mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 55%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
+}
+
+.silhouette-mask-arch {
+  -webkit-mask-image: radial-gradient(
+    ellipse 130% 115% at 50% 100%,
+    #000 42%,
+    transparent 72%
+  );
+  mask-image: radial-gradient(
+    ellipse 130% 115% at 50% 100%,
+    #000 42%,
+    transparent 72%
+  );
+}
+
+.silhouette-mask-portal {
+  -webkit-mask-image:
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image:
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.silhouette-tone-dark {
+  background: linear-gradient(
+    105deg,
+    rgb(29 43 80 / 0.92) 0%,
+    rgb(29 43 80 / 0.55) 38%,
+    rgb(29 43 80 / 0.15) 68%,
+    transparent 100%
+  );
+}
+
+.silhouette-tone-cream {
+  background: linear-gradient(
+    285deg,
+    rgb(237 220 206 / 0.98) 0%,
+    rgb(237 220 206 / 0.72) 32%,
+    rgb(237 220 206 / 0.2) 58%,
+    transparent 100%
+  );
+}
+
+.silhouette-tone-light {
+  background: linear-gradient(
+    285deg,
+    rgb(255 255 255 / 0.98) 0%,
+    rgb(255 255 255 / 0.7) 35%,
+    transparent 72%
+  );
+}
+
+.editorial-glass-dark {
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background: rgb(29 43 80 / 0.45);
+  backdrop-filter: blur(14px);
+}
+
+.editorial-glass-cream {
+  border: 1px solid rgb(29 43 80 / 0.08);
+  background: rgb(255 255 255 / 0.55);
+  backdrop-filter: blur(12px);
+}
+
 .moody-overlay {
   background: linear-gradient(
     165deg,

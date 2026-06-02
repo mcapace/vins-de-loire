@@ -51,8 +51,8 @@ export const siteImages = {
     },
   },
   region: {
-    src: gaelle(39),
-    alt: "Panoramic view of Loire Valley vineyards and countryside along the river",
+    src: gaelle(27),
+    alt: "Loire river corridor and vineyard hills dissolving into the horizon",
   },
   sustainability: {
     src: gaelle(26),

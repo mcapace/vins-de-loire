@@ -23,40 +23,56 @@ export const COBRAND_WS_HEIGHT = {
 } as const;
 
 /**
- * Loire PNG includes large clear space around the mark; scale up per breakpoint
- * so it reads equal to the WS wordmark (not just equal container height).
+ * Loire PNG has padding; slight bump over WS cap height. Keep close to 1.x so
+ * flex center alignment keeps both wordmarks on one optical line.
  */
 export const LOIRE_OPTICAL_SCALE: Record<keyof typeof COBRAND_WS_HEIGHT, number> =
   {
-    sm: 2.5,
-    md: 2.3,
-    lg: 2.2,
-    xl: 2.05,
+    sm: 1.3,
+    md: 1.28,
+    lg: 1.26,
+    xl: 1.24,
   };
+
+/** Fine-tune vertical centering (px) after items-center layout. */
+export const LOIRE_OFFSET_Y: Record<keyof typeof COBRAND_WS_HEIGHT, number> = {
+  sm: -1,
+  md: -1,
+  lg: -2,
+  xl: -2,
+};
+
+export const WS_OFFSET_Y: Record<keyof typeof COBRAND_WS_HEIGHT, number> = {
+  sm: 0,
+  md: 0,
+  lg: 1,
+  xl: 1,
+};
 
 export type CoBrandLogoSize = keyof typeof COBRAND_WS_HEIGHT;
 
 export type CoBrandMetrics = {
   wsHeight: number;
   loireHeight: number;
-  rowHeight: number;
   separatorPx: number;
   loireWidth: number;
   wsWidth: number;
+  loireOffsetY: number;
+  wsOffsetY: number;
 };
 
 export function getCoBrandMetrics(size: CoBrandLogoSize): CoBrandMetrics {
   const wsHeight = COBRAND_WS_HEIGHT[size];
   const loireHeight = Math.round(wsHeight * LOIRE_OPTICAL_SCALE[size]);
-  const rowHeight = Math.max(loireHeight, wsHeight);
 
   return {
     wsHeight,
     loireHeight,
-    rowHeight,
-    separatorPx: Math.round(wsHeight * 0.4),
+    separatorPx: Math.round(wsHeight * 0.38),
     loireWidth: Math.round(loireHeight * LOIRE_LOGO_ASPECT),
     wsWidth: Math.round(wsHeight * WS_LOGO_ASPECT),
+    loireOffsetY: LOIRE_OFFSET_Y[size],
+    wsOffsetY: WS_OFFSET_Y[size],
   };
 }
 

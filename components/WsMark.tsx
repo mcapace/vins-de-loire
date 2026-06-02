@@ -8,6 +8,7 @@ type WsMarkProps = {
   invert?: boolean;
   className?: string;
   priority?: boolean;
+  style?: React.CSSProperties;
 };
 
 export default function WsMark({
@@ -16,6 +17,7 @@ export default function WsMark({
   invert = true,
   className,
   priority,
+  style,
 }: WsMarkProps) {
   return (
     <Image
@@ -30,6 +32,7 @@ export default function WsMark({
         width: "auto",
         opacity,
         filter: invert ? "invert(1)" : "none",
+        ...style,
       }}
     />
   );
