@@ -1,6 +1,6 @@
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import {
   sectionPadding,
   spaceEyebrowToHeadline,
@@ -21,30 +21,28 @@ export default function Sustainability() {
       className={`relative overflow-hidden bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="sustainability-heading"
     >
-      <SilhouettePlate
+      <PhotoFill
         src={siteImages.sustainability.src}
         alt={siteImages.sustainability.alt}
-        variant="fade-right"
-        tone="cream"
-        wrapperClassName="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[58%] lg:block"
-        className="h-full w-full"
-        sizes="58vw"
+        sizes="(max-width: 1024px) 0px, 55vw"
+        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[55%] lg:block"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-[1] hidden w-[55%] bg-gradient-to-l from-loire-accent-cream via-loire-accent-cream/75 to-transparent lg:block"
+        aria-hidden
       />
 
       <SectionContainer className="relative z-10">
         <div className="grid min-w-0 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal
-            className="relative min-h-[20rem] w-full min-w-0 lg:hidden"
-            delay={0}
-          >
-            <SilhouettePlate
+          <Reveal className="relative min-h-[20rem] w-full min-w-0 lg:hidden">
+            <PhotoFill
               src={siteImages.sustainability.src}
               alt={siteImages.sustainability.alt}
-              variant="arch"
-              tone="cream"
-              wrapperClassName="h-full w-full"
-              className="min-h-[20rem] w-full"
               sizes="100vw"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-accent-cream via-loire-accent-cream/50 to-transparent"
+              aria-hidden
             />
           </Reveal>
 

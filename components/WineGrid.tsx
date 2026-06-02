@@ -1,5 +1,5 @@
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import SectionContainer from "@/components/SectionContainer";
 import {
   sectionPadding,
@@ -75,18 +75,14 @@ function WineCard({ wine }: { wine: Wine }) {
 function RatingsComingSoon() {
   return (
     <div className="relative mt-12 min-h-[28rem] overflow-hidden sm:min-h-[32rem]">
-      <SilhouettePlate
+      <PhotoFill
         src={siteImages.ratingsEmpty.src}
         alt={siteImages.ratingsEmpty.alt}
-        variant="fade-right"
-        tone="light"
-        wrapperClassName="absolute inset-0"
-        className="h-full w-full"
         sizes="100vw"
       />
 
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/75 to-white/25 lg:via-white/60 lg:to-transparent"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-white via-white/70 to-white/20 lg:via-white/50 lg:to-transparent"
         aria-hidden
       />
 

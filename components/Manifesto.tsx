@@ -1,6 +1,6 @@
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import {
   sectionPadding,
   spaceEyebrowToHeadline,
@@ -16,14 +16,15 @@ export default function Manifesto() {
       className={`relative overflow-hidden bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="manifesto-heading"
     >
-      <SilhouettePlate
+      <PhotoFill
         src={siteImages.manifesto.src}
         alt={siteImages.manifesto.alt}
-        variant="fade-left"
-        tone="cream"
-        wrapperClassName="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52vw,680px)] lg:block"
-        className="h-full w-full"
-        sizes="52vw"
+        sizes="(max-width: 1024px) 0px, 45vw"
+        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(48vw,640px)] lg:block"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-[1] hidden w-[min(48vw,640px)] bg-gradient-to-l from-loire-accent-cream via-loire-accent-cream/80 to-transparent lg:block"
+        aria-hidden
       />
 
       <SectionContainer className="relative z-10">
@@ -74,14 +75,15 @@ export default function Manifesto() {
             className="relative min-h-[22rem] w-full min-w-0 lg:col-span-5 lg:min-h-[34rem] xl:col-span-6"
             delay={1}
           >
-            <SilhouettePlate
+            <PhotoFill
               src={siteImages.manifesto.src}
               alt={siteImages.manifesto.alt}
-              variant="arch"
-              tone="cream"
-              wrapperClassName="h-full w-full lg:hidden"
-              className="h-full min-h-[22rem] w-full"
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="lg:hidden"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-accent-cream/90 via-transparent to-loire-accent-cream/30 lg:hidden"
+              aria-hidden
             />
             <div
               className="pointer-events-none absolute -bottom-6 -left-6 hidden h-24 w-24 border border-loire-accent-gold/35 lg:block"

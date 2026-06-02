@@ -1,6 +1,6 @@
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import { featuredCards } from "@/lib/featured";
 import {
   sectionPadding,
@@ -47,22 +47,19 @@ export default function FeaturedDiscoveries() {
                   index === 1 ? "lg:-mt-6 lg:min-h-[32rem]" : ""
                 }`}
               >
-                <SilhouettePlate
+                <PhotoFill
                   src={card.image}
                   alt={card.imageAlt}
-                  variant="full"
-                  tone="dark"
-                  wrapperClassName="absolute inset-0"
-                  className="transition-transform duration-700 group-hover:scale-[1.03]"
                   sizes="(max-width: 1024px) 100vw, 33vw"
+                  imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/35 to-transparent"
+                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/40 to-loire-blue-deep/5"
                   aria-hidden
                 />
 
-                <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-end p-7 sm:p-8">
+                <div className="relative z-10 flex min-h-[inherit] flex-col justify-end p-7 sm:p-8">
                   <p className="font-sans text-[11px] font-normal uppercase tracking-[0.28em] text-loire-accent-gold">
                     {card.category}
                   </p>

@@ -1,7 +1,7 @@
 "use client";
 
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import SectionContainer from "@/components/SectionContainer";
 import {
   plannerTabs,
@@ -47,13 +47,9 @@ function TradePanel() {
         </Link>
       </div>
       <div className="relative min-h-[16rem] overflow-hidden lg:col-span-6 lg:min-h-[22rem]">
-        <SilhouettePlate
+        <PhotoFill
           src={siteImages.planner.trade.src}
           alt={siteImages.planner.trade.alt}
-          variant="full"
-          tone="cream"
-          wrapperClassName="absolute inset-0"
-          className="h-full w-full"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
@@ -94,17 +90,13 @@ function TerritoriesPanel() {
 function RatingsPanel() {
   return (
     <div className="relative min-h-[24rem] overflow-hidden">
-      <SilhouettePlate
+      <PhotoFill
         src={siteImages.planner.ratings.src}
         alt={siteImages.planner.ratings.alt}
-        variant="fade-right"
-        tone="cream"
-        wrapperClassName="absolute inset-0"
-        className="h-full w-full"
         sizes="100vw"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/70 to-transparent"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-loire-accent-cream via-loire-accent-cream/60 to-transparent"
         aria-hidden
       />
       <div className="relative z-10 flex min-h-[inherit] flex-col justify-center px-2 py-8 sm:px-4 lg:max-w-md">

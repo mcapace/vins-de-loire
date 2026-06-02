@@ -1,8 +1,8 @@
 "use client";
 
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import { territories } from "@/lib/territories";
 import {
   sectionPadding,
@@ -68,18 +68,15 @@ export default function Territories() {
               className={`min-w-0 ${index === 1 || index === 2 ? "lg:mt-8" : ""}`}
             >
               <article className="group relative aspect-[3/4] min-h-[18rem] overflow-hidden">
-                <SilhouettePlate
+                <PhotoFill
                   src={territory.image}
                   alt={territory.imageAlt}
-                  variant="arch"
-                  tone="dark"
-                  wrapperClassName="absolute inset-0"
-                  className="h-full w-full transition-transform duration-700 group-hover:scale-[1.05]"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.05]"
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/35 to-transparent"
+                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/95 via-loire-blue-deep/30 to-transparent"
                   aria-hidden
                 />
 

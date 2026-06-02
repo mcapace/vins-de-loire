@@ -1,8 +1,8 @@
 "use client";
 
+import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import SilhouettePlate from "@/components/SilhouettePlate";
 import { grapeCards } from "@/lib/grapes";
 import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
 import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
@@ -64,18 +64,15 @@ export default function GrapesStyles() {
               className={`min-w-0 ${index === 1 || index === 4 ? "lg:mt-6" : ""}`}
             >
               <article className="group relative aspect-[4/5] min-h-[20rem] overflow-hidden">
-                <SilhouettePlate
+                <PhotoFill
                   src={card.image}
                   alt={card.imageAlt}
-                  variant="arch"
-                  tone="dark"
-                  wrapperClassName="absolute inset-0"
-                  className="h-full w-full transition-transform duration-700 group-hover:scale-[1.04]"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  imageClassName="motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.04]"
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-loire-blue-deep/90 via-loire-blue-deep/30 to-transparent"
+                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-loire-blue-deep/92 via-loire-blue-deep/35 to-transparent"
                   aria-hidden
                 />
 
