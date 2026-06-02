@@ -1,54 +1,77 @@
-import SectionContainer from "@/components/SectionContainer";
-import { sectionPaddingCompact } from "@/lib/section";
+"use client";
 
-const stats = [
-  {
-    value: "34",
-    label: "AOPs from the Atlantic to the heart of France",
-  },
-  {
-    value: "2nd",
-    label: "Largest AOP sparkling production after Champagne",
-  },
-  {
-    value: "#1",
-    label: "Global producer of Chenin Blanc and Cabernet Franc",
-  },
-  {
-    value: "#2",
-    label: "Source of AOP rosé in France",
-  },
-] as const;
+import Reveal from "@/components/Reveal";
+import Strates from "@/components/Strates";
+import SectionContainer from "@/components/SectionContainer";
+import { regionStats, regionStatsFootnote } from "@/lib/region-stats";
+import { sectionPaddingCompact } from "@/lib/section";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealTransition, staggerChildren } from "@/lib/motion";
 
 export default function RegionStats() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
-      className={`bg-loire-blue text-white ${sectionPaddingCompact}`}
+      className={`relative overflow-hidden bg-loire-blue text-white ${sectionPaddingCompact}`}
       aria-labelledby="region-stats-heading"
     >
-      <SectionContainer>
-        <h2
-          id="region-stats-heading"
-          className="text-center font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-left"
-        >
-          Loire Valley at a glance
-        </h2>
+      <Strates className="absolute inset-0 opacity-25" />
+      <SectionContainer className="relative z-10">
+        <Reveal>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-pale sm:text-sm">
+            The region
+          </p>
+          <h2
+            id="region-stats-heading"
+            className="mt-5 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            Loire Valley at a glance
+          </h2>
+        </Reveal>
 
-        <ul className="mt-10 grid grid-cols-1 gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12 lg:mt-14 lg:grid-cols-4 lg:gap-8">
-          {stats.map((stat) => (
-            <li
+        <motion.ul
+          className="mt-12 grid min-w-0 grid-cols-1 gap-10 sm:mt-14 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-8"
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "visible"}
+          viewport={{ once: true, margin: "-8% 0px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: staggerChildren } },
+          }}
+        >
+          {regionStats.map((stat) => (
+            <motion.li
               key={stat.value + stat.label}
-              className="flex min-w-0 flex-col items-center text-center sm:items-start sm:text-left lg:items-center lg:text-center"
+              variants={
+                reduceMotion
+                  ? undefined
+                  : {
+                      hidden: { opacity: 0, y: 20 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: revealTransition,
+                      },
+                    }
+              }
+              className="flex min-w-0 flex-col border-t border-loire-blue-pale/25 pt-6 sm:pt-8"
             >
-              <p className="font-display text-5xl font-semibold leading-none tracking-tight sm:text-6xl lg:text-7xl">
+              <p className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl">
                 {stat.value}
               </p>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-loire-blue-pale sm:mt-5 sm:text-base sm:leading-relaxed">
+              <p className="mt-4 text-sm leading-relaxed text-loire-blue-pale sm:text-base">
                 {stat.label}
               </p>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
+
+        <Reveal delay={2}>
+          <p className="mt-12 max-w-3xl text-sm leading-relaxed text-loire-blue-light sm:mt-14 sm:text-base">
+            {regionStatsFootnote}
+          </p>
+        </Reveal>
       </SectionContainer>
     </section>
   );

@@ -9,7 +9,7 @@ const VINS_DE_LOIRE_LOGO =
 const footerLinks = [
   { label: "Loire Wines", href: "#" },
   { label: "Wine Spectator", href: "#" },
-  { label: "Trade Portal", href: "#" },
+  { label: "Trade Portal", href: "#trade-portal" },
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Use", href: "#" },
 ] as const;
@@ -22,7 +22,11 @@ export default function Footer() {
       className={`border-t border-loire-blue-pale/20 bg-loire-blue-deep text-loire-blue-faint ${sectionPaddingCompact}`}
     >
       <SectionContainer>
-        <div className="flex min-w-0 flex-col items-center gap-10 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+        <p className="text-center font-display text-xl font-medium leading-relaxed text-loire-blue-pale sm:text-left sm:text-2xl">
+          Explore, learn, and connect. Your Loire journey starts here.
+        </p>
+
+        <div className="mt-10 flex min-w-0 flex-col items-center gap-10 sm:mt-12 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
           <Image
             src={VINS_DE_LOIRE_LOGO}
             alt="Vins de Loire logo in brand blue"
@@ -47,6 +51,10 @@ export default function Footer() {
           <span className="mt-2 block text-xs uppercase tracking-[0.14em] text-loire-blue-light">
             Legal review pending
           </span>
+        </p>
+
+        <p className="mt-6 text-center text-xs leading-relaxed text-loire-blue-light sm:text-left sm:text-sm">
+          Photography: Gaelle BC Photographe for InterLoire / Vins de Loire
         </p>
 
         <nav

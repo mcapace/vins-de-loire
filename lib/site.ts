@@ -2,11 +2,10 @@
 
 export const siteName = "Vins de Loire";
 
-export const siteTitle =
-  "Loire Wines × Wine Spectator | Trade Portal";
+export const siteTitle = "The Wines of a Lifetime | Wine Spectator";
 
 export const siteDescription =
-  "Discover Loire wines through this trade hub. Recent Wine Spectator ratings, regional resources, and tools for trade members.";
+  "From the Loire Océanique to the Loire Volcanique: discover Loire wines with Wine Spectator ratings, regional resources, and trade tools.";
 
 export const sponsorDisclosure =
   "Sponsored content presented by Vins de Loire";

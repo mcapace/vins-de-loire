@@ -1,5 +1,6 @@
+import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
-import { sectionPadding } from "@/lib/section";
+import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
 import { wines, type Wine, type WineColor } from "@/src/data/wines";
 
 const colorLabels: Record<WineColor, string> = {
@@ -12,13 +13,13 @@ const colorLabels: Record<WineColor, string> = {
 function ScoreBadge({ score }: { score: number }) {
   return (
     <div
-      className="flex shrink-0 flex-col items-center justify-center rounded-sm bg-loire-blue-deep px-4 py-3 text-white shadow-sm sm:px-5 sm:py-4"
+      className="flex shrink-0 flex-col items-center justify-center rounded-sm border-2 border-loire-blue-deep bg-white px-4 py-3 text-loire-blue-deep shadow-sm sm:px-5 sm:py-4"
       aria-label={`Wine Spectator score ${score} points`}
     >
       <span className="font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
         {score}
       </span>
-      <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-loire-blue-pale sm:text-xs">
+      <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-loire-blue-mid sm:text-xs">
         Points
       </span>
     </div>
@@ -68,31 +69,36 @@ export default function WineGrid() {
 
   return (
     <section
-      className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
+      className={`bg-white text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="wine-grid-heading"
     >
       <SectionContainer>
-        <header className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
-            Rated by Wine Spectator
-          </p>
-          <h2
-            id="wine-grid-heading"
-            className="mt-5 font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl lg:leading-tight"
-          >
-            Recent Wine Spectator ratings
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-loire-blue sm:text-xl sm:leading-relaxed">
-            Recent Wine Spectator ratings from Loire Valley editor Kristen
-            Bieler.
-          </p>
-        </header>
+        <Reveal>
+          <header className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-loire-blue-mid sm:text-sm">
+              Recently rated
+            </p>
+            <h2
+              id="wine-grid-heading"
+              className={`font-display text-3xl font-semibold leading-snug tracking-tight sm:text-4xl lg:text-5xl ${spaceEyebrowToHeadline}`}
+            >
+              The Loire, scored by Wine Spectator
+            </h2>
+            <p
+              className={`text-lg leading-relaxed text-loire-blue sm:text-xl ${spaceHeadlineToBody}`}
+            >
+              Recent Wine Spectator ratings from Loire Valley editor Kristen
+              Bieler. Explore scores, tasting notes, and producers as the
+              approved list is published.
+            </p>
+          </header>
+        </Reveal>
 
-        <ul className="mt-12 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-8">
-          {wines.map((wine) => (
-            <li key={wine.id} className="flex min-w-0">
+        <ul className="mt-12 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-8">
+          {wines.map((wine, index) => (
+            <Reveal key={wine.id} as="li" className="flex min-w-0" delay={index % 3}>
               <WineCard wine={wine} />
-            </li>
+            </Reveal>
           ))}
         </ul>
       </SectionContainer>

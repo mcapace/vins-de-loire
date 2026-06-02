@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Cormorant_Garamond, Poppins } from "next/font/google";
 import SiteProviders from "@/components/SiteProviders";
 import {
   faviconPath,
@@ -15,6 +15,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -65,7 +72,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${cormorant.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <SiteProviders />
