@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import SiteNav from "@/components/SiteNav";
-import TradePortalHub from "@/components/TradePortalHub";
+import ValleyProofStrip from "@/components/ValleyProofStrip";
+import FeaturedDiscoveries from "@/components/FeaturedDiscoveries";
+import LoirePlanner from "@/components/LoirePlanner";
 import Manifesto from "@/components/Manifesto";
 import GrapesStyles from "@/components/GrapesStyles";
 import RegionStats from "@/components/RegionStats";
@@ -15,16 +17,18 @@ export default function Home() {
     <>
       <SiteNav />
       <main id="main-content" className="min-w-0 overflow-x-hidden">
-      <Hero />
-      <TradePortalHub />
-      <Manifesto />
-      <GrapesStyles />
-      <RegionStats />
-      <Territories />
-      <WineGrid />
-      <Sustainability />
-      <EducationCTA />
-      <Footer />
+        <Hero />
+        <ValleyProofStrip />
+        <FeaturedDiscoveries />
+        <LoirePlanner />
+        <Manifesto />
+        <GrapesStyles />
+        <RegionStats />
+        <Territories />
+        <WineGrid />
+        <Sustainability />
+        <EducationCTA />
+        <Footer />
       </main>
     </>
   );

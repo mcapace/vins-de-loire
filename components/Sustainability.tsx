@@ -13,6 +13,7 @@ const SUSTAINABILITY_IMAGE =
 export default function Sustainability() {
   return (
     <section
+      id="sustainability"
       className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="sustainability-heading"
     >

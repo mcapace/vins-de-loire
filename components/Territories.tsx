@@ -17,6 +17,7 @@ export default function Territories() {
 
   return (
     <section
+      id="territories"
       className={`bg-loire-accent-cream text-loire-blue-deep ${sectionPadding}`}
       aria-labelledby="territories-heading"
     >
