@@ -100,8 +100,10 @@ export const regionStats: readonly RegionStat[] = [
   },
 ] as const;
 
-export const regionStatsFootnote =
-  "The Loire is also #2 in the world for Sauvignon Blanc. More than 3,000 growers shape this collective identity.";
+export const regionStatsFootnote = {
+  lead: "The Loire is also #2 in the world for Sauvignon Blanc.",
+  detail: "More than 3,000 growers shape this collective identity.",
+} as const;
 
 export const regionAccentStyles: Record<
   RegionStatAccent,

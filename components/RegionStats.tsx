@@ -60,7 +60,8 @@ export default function RegionStats() {
             <p className="font-sans text-[10px] font-medium uppercase tracking-[0.24em] text-loire-accent-gold">
               Did you know?
             </p>
-            <p className={`mt-3 ${typeBodyMutedDark}`}>{regionStatsFootnote}</p>
+            <p className={`mt-3 ${typeBodyMutedDark}`}>{regionStatsFootnote.lead}</p>
+            <p className={`mt-2 ${typeBodyMutedDark}`}>{regionStatsFootnote.detail}</p>
           </div>
         </Reveal>
       </SectionContainer>
