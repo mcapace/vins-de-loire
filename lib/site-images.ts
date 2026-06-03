@@ -1,6 +1,7 @@
 /**
  * Curated InterLoire / Gaelle BC photography (public/images).
  * Every path below must exist on disk — no stock placeholders.
+ * Assignments are spread across the library so adjacent sections rarely repeat.
  */
 
 const gaelle = (id: number) =>
@@ -24,21 +25,21 @@ export const siteImages = {
   },
   featured: {
     bridge: {
-      src: gaelle(27),
-      alt: "Loire river corridor and vineyard slopes at dusk",
+      src: gaelle(24),
+      alt: "The Loire river winding through vineyard country at dusk",
     },
     grapes: {
-      src: gaelle(35),
-      alt: "Sancerre-style Sauvignon Blanc vineyards on limestone hills",
+      src: gaelle(31),
+      alt: "Close view of Loire Valley vines in late-summer light",
     },
     territories: {
-      src: gaelle(46),
-      alt: "Inland Loire vineyards toward the volcanic heart of France",
+      src: gaelle(39),
+      alt: "Rolling Loire vineyards toward distant hills and open sky",
     },
   },
   manifesto: {
-    src: gaelle(28),
-    alt: "Vineyard rows along the Loire with soft evening light",
+    src: gaelle(13),
+    alt: "Vineyard landscape along the Loire under soft evening light",
   },
   planner: {
     trade: {
@@ -49,18 +50,37 @@ export const siteImages = {
       src: gaelle(48),
       alt: "Loire Valley white and sparkling wines in glass on a barrel",
     },
+    /** Smaller toolkit grid — distinct from full Territories section photos */
+    territoryPreviews: {
+      nantais: {
+        src: gaelle(1),
+        alt: "Coastal Nantais vineyards near the Atlantic",
+      },
+      anjouSaumur: {
+        src: gaelle(2),
+        alt: "Anjou-Saumur hills and vines in golden light",
+      },
+      touraine: {
+        src: gaelle(23),
+        alt: "Touraine vineyard slopes and Loire countryside",
+      },
+      centreLoire: {
+        src: gaelle(34),
+        alt: "Centre-Loire upland vines toward the volcanic interior",
+      },
+    },
   },
   region: {
-    src: gaelle(27),
-    alt: "Loire river corridor and vineyard hills dissolving into the horizon",
+    src: gaelle(17),
+    alt: "Loire Valley panorama with river light and vineyard ridges",
   },
   sustainability: {
-    src: gaelle(26),
-    alt: "Loire vineyard rows with cover crops and sustainable farming practices",
+    src: gaelle(12),
+    alt: "Vineyard rows with grass cover and sustainable farming in the Loire",
   },
   ratingsEmpty: {
-    src: gaelle(49),
-    alt: "Crémant and Loire sparkling wines served for tasting",
+    src: gaelle(11),
+    alt: "Assorted Loire wines ready for professional tasting",
   },
   grapes: {
     chenin: {
@@ -72,15 +92,15 @@ export const siteImages = {
       alt: "Cabernet Franc vineyard rows in Chinon and Bourgueil country",
     },
     sauvignon: {
-      src: gaelle(32),
-      alt: "Sauvignon Blanc vines on the slopes of Sancerre",
+      src: gaelle(36),
+      alt: "Sauvignon Blanc vines on sunlit slopes in Sancerre country",
     },
     melon: {
       src: gaelle(6),
       alt: "Muscadet vineyards near the Atlantic in the Nantais",
     },
     rose: {
-      src: gaelle(29),
+      src: gaelle(33),
       alt: "Pale Loire rosé vineyards in Anjou at harvest time",
     },
     sparkling: {
@@ -98,11 +118,11 @@ export const siteImages = {
       alt: "Anjou-Saumur vineyards with Chenin Blanc and Cabernet Franc",
     },
     touraine: {
-      src: gaelle(40),
-      alt: "Touraine vineyards and tuffeau hills near the Loire châteaux",
+      src: gaelle(9),
+      alt: "Touraine vines and tuffeau hills near the Loire châteaux",
     },
     centreLoire: {
-      src: gaelle(42),
+      src: gaelle(37),
       alt: "Centre-Loire vineyards on rolling hills toward Sancerre and Pouilly",
     },
   },

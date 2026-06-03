@@ -22,7 +22,7 @@ import {
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
-import { territories } from "@/lib/territories";
+import { territoryPlannerPreviews } from "@/lib/planner-territory-previews";
 
 function TradePanel() {
   return (
@@ -60,7 +60,7 @@ function TradePanel() {
         </p>
 
         <ul className="mt-5 grid min-w-0 grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
-          {territories.map((territory) => (
+          {territoryPlannerPreviews.map((territory) => (
             <li key={territory.name}>
               <Link
                 href="#territories"
