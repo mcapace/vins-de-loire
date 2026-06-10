@@ -46,7 +46,7 @@ export default function RegionStats() {
             id="region-stats-heading"
             className={`${typeDisplayDark} mt-5 sm:mt-6`}
           >
-            The valley, by the numbers
+            The Loire, by the numbers
           </h2>
           <p className={`mx-auto mt-6 max-w-2xl ${typeBodyMutedDark}`}>
             {regionIntro}

@@ -2,7 +2,7 @@ import { siteImages } from "@/lib/site-images";
 
 /** Site-wide config for metadata, analytics, and absolute URLs */
 
-export const siteName = "Vins de Loire";
+export const siteName = "Loire Wines";
 
 export const siteTitle = "The Wines of a Lifetime | Wine Spectator";
 
@@ -10,7 +10,23 @@ export const siteDescription =
   "From the Loire Océanique to the Loire Volcanique: discover Loire wines with Wine Spectator ratings, regional resources, and trade tools.";
 
 export const sponsorDisclosure =
-  "Sponsored content presented by Vins de Loire";
+  "Sponsored content presented by Loire Wines";
+
+/** Mailchimp trade signup (InterLoire / Loire Wines campaign) */
+export const tradeNetworkUrl =
+  "https://mailchi.mp/d7b052415d0b/loirewines";
+
+/**
+ * InterLoire appellation resources — update when client supplies final URL.
+ * @see https://www.vinsdeloire.fr/en/loire-trade
+ */
+export const appellationListUrl =
+  "https://www.vinsdeloire.fr/en/loire-trade";
+
+export const externalLinkProps = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+} as const;
 
 /** Set in Vercel: NEXT_PUBLIC_SITE_URL (e.g. https://loire.winespectator.com) */
 export function getSiteUrl(): string {

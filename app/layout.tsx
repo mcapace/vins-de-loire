@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: ogImagePath,
         width: 2400,
         height: 1600,
-        alt: "Loire Valley vineyards at golden hour",
+        alt: "Loire vineyards at golden hour",
       },
     ],
   },

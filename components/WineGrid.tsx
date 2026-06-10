@@ -15,6 +15,7 @@ import {
   typeScoreLabel,
 } from "@/lib/typography";
 
+import { externalLinkProps, tradeNetworkUrl } from "@/lib/site";
 import { siteImages } from "@/lib/site-images";
 
 const colorLabels: Record<WineColor, string> = {
@@ -97,10 +98,11 @@ function RatingsComingSoon() {
           get alerts and full tasting notes.
         </p>
         <Link
-          href="#trade-portal"
+          href={tradeNetworkUrl}
+          {...externalLinkProps}
           className="mt-8 inline-flex min-h-12 w-fit items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 text-sm font-normal uppercase tracking-[0.18em] text-white transition-colors duration-200 hover:bg-loire-blue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-loire-blue-deep"
         >
-          Enter the Trade Portal
+          Join the Trade Network
         </Link>
       </div>
     </div>
@@ -119,19 +121,19 @@ export default function WineGrid() {
       <SectionContainer>
         <Reveal>
           <header className="max-w-3xl">
-            <p className={typeEyebrowLight}>Recently rated</p>
+            <p className={typeEyebrowLight}>Wine Spectator</p>
             <h2
               id="wine-grid-heading"
               className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
             >
-              The Loire, scored by Wine Spectator
+              Ratings &amp; scores
             </h2>
             <p
               className={`text-lg leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
             >
-              Recent Wine Spectator ratings from Loire Valley editor Kristen
-              Bieler. Explore scores, tasting notes, and producers as the
-              approved list is published.
+              Recent Wine Spectator ratings from Loire editor Kristen Bieler.
+              Explore scores, tasting notes, and producers as the approved list
+              is published.
             </p>
           </header>
         </Reveal>

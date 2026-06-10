@@ -7,6 +7,7 @@ import { typeBodyDark, typeButton, typeHero } from "@/lib/typography";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
+import { externalLinkProps, tradeNetworkUrl } from "@/lib/site";
 import { siteImages } from "@/lib/site-images";
 
 export default function Hero() {
@@ -59,16 +60,17 @@ export default function Hero() {
 
           <div className="mt-10 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <Link
-              href="#trade-portal"
+              href={tradeNetworkUrl}
+              {...externalLinkProps}
               className={`inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-6 py-3 sm:w-auto sm:px-8 ${typeButton} text-loire-blue transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
-              Enter the Trade Portal
+              Join the Trade Network
             </Link>
             <Link
-              href="#planner"
+              href="#grapes"
               className={`inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/50 bg-white/10 px-6 py-3 sm:w-auto sm:px-8 ${typeButton} text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`}
             >
-              Explore the valley
+              Explore the Loire
             </Link>
           </div>
         </motion.div>

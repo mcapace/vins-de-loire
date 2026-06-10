@@ -3,11 +3,11 @@
 import CoBrandLockup from "@/components/CoBrandLockup";
 import SponsorBar from "@/components/SponsorBar";
 import Link from "next/link";
-import { typeButton, typeNavLink } from "@/lib/typography";
+import { typeNavLink } from "@/lib/typography";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "Know", href: "#manifesto" },
+  { label: "Welcome", href: "#manifesto" },
   { label: "Wines", href: "#grapes" },
   { label: "Region", href: "#region" },
   { label: "Ratings", href: "#ratings" },
@@ -65,7 +65,7 @@ export default function SiteNav() {
           <Link
             href="#"
             className="min-w-0 shrink origin-left scale-[0.88] sm:scale-100"
-            aria-label="Vins de Loire home"
+            aria-label="Loire Wines home"
           >
             <CoBrandLockup variant="on-dark" size="nav" priority />
           </Link>
@@ -81,57 +81,40 @@ export default function SiteNav() {
             ))}
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <button
-              type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-white/25 text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:hidden"
-              aria-expanded={menuOpen}
-              aria-controls="mobile-nav-panel"
-              onClick={() => setMenuOpen((open) => !open)}
-            >
-              <span className="sr-only">
-                {menuOpen ? "Close menu" : "Open menu"}
-              </span>
-              {menuOpen ? (
-                <svg
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  aria-hidden
-                >
-                  <path
-                    d="M6 6l12 12M18 6L6 18"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  aria-hidden
-                >
-                  <path
-                    d="M4 7h16M4 12h16M4 17h16"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              )}
-            </button>
-
-            <a
-              href="#trade-portal"
-              className={`inline-flex min-h-10 max-w-[9.5rem] items-center justify-center rounded-sm bg-white px-3 py-2 text-center ${typeButton} text-loire-blue transition-colors hover:bg-loire-blue-faint sm:max-w-none sm:px-5`}
-              onClick={closeMenu}
-            >
-              <span className="hidden min-[400px]:inline">Plan your visit</span>
-              <span className="min-[400px]:hidden">Trade</span>
-            </a>
-          </div>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-white/25 text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:hidden"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav-panel"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="sr-only">
+              {menuOpen ? "Close menu" : "Open menu"}
+            </span>
+            {menuOpen ? (
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden
+              >
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden
+              >
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
         </div>
 
         <nav
@@ -153,15 +136,6 @@ export default function SiteNav() {
                 </a>
               </li>
             ))}
-            <li className="border-t border-white/10 pt-2">
-              <a
-                href="#planner"
-                className={mobileNavLinkClass}
-                onClick={closeMenu}
-              >
-                Loire toolkit
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

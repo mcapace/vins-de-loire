@@ -6,8 +6,10 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import { externalLinkProps, tradeNetworkUrl } from "@/lib/site";
 import { siteImages } from "@/lib/site-images";
-import { typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
+import { typeButton, typeDisplayLight, typeEyebrowLight } from "@/lib/typography";
+import Link from "next/link";
 
 export default function Manifesto() {
   return (
@@ -51,9 +53,17 @@ export default function Manifesto() {
                 initiated is our river journey.
               </blockquote>
               <figcaption className="mt-5 font-sans text-[11px] font-normal uppercase tracking-[0.26em] text-loire-blue-mid">
-                Vins de Loire
+                Loire Wines
               </figcaption>
             </figure>
+
+            <Link
+              href={tradeNetworkUrl}
+              {...externalLinkProps}
+              className={`mt-10 inline-flex min-h-12 items-center justify-center rounded-sm bg-loire-blue-deep px-8 py-3 ${typeButton} text-white transition-colors hover:bg-loire-blue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-loire-blue-deep`}
+            >
+              Join the Trade Network
+            </Link>
           </Reveal>
 
           <Reveal

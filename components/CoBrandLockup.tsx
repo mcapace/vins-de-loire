@@ -18,7 +18,7 @@ type CoBrandLockupProps = {
 };
 
 /**
- * Dual-brand row: Vins de Loire × Wine Spectator (matched cap height per size).
+ * Dual-brand row: Loire Wines × Wine Spectator (matched cap height per size).
  */
 export default function CoBrandLockup({
   variant = "on-dark",
@@ -44,7 +44,7 @@ export default function CoBrandLockup({
     <div
       className={`flex items-center justify-center gap-3 overflow-visible sm:justify-start sm:gap-3.5 ${className}`.trim()}
       style={{ minHeight: rowHeight }}
-      aria-label="Vins de Loire and Wine Spectator"
+      aria-label="Loire Wines and Wine Spectator"
     >
       <div
         className="flex shrink-0 items-center justify-center overflow-visible"
@@ -52,7 +52,7 @@ export default function CoBrandLockup({
       >
         <Image
           src={loireSrc}
-          alt="Vins de Loire"
+          alt="Loire Wines"
           width={loireWidth}
           height={loireHeight}
           priority={priority}

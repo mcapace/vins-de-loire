@@ -6,6 +6,7 @@ import {
   spaceEyebrowToHeadline,
   spaceHeadlineToBody,
 } from "@/lib/section";
+import { externalLinkProps, tradeNetworkUrl } from "@/lib/site";
 import {
   typeButton,
   typeDisplayDark,
@@ -20,8 +21,6 @@ const unlocks = [
 ] as const;
 
 const buttonPrimary = `inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-white px-8 py-3 text-center ${typeButton} text-loire-blue shadow-sm transition-[background-color,box-shadow] duration-200 hover:bg-loire-blue-faint hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto`;
-
-const buttonSecondary = `inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/40 px-8 py-3 text-center ${typeButton} text-white transition-[border-color,color,background-color] duration-200 hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto`;
 
 export default function EducationCTA() {
   return (
@@ -40,7 +39,7 @@ export default function EducationCTA() {
               id="education-cta-heading"
               className={`${typeDisplayDark} lg:leading-tight ${spaceEyebrowToHeadline}`}
             >
-              Your Loire toolkit, in one place
+              Join the Trade Network
             </h2>
 
             <p
@@ -56,15 +55,13 @@ export default function EducationCTA() {
               ))}
             </ul>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-5">
-              {/* TODO: Replace href with the approved trade signup URL */}
-              <a href="#" className={buttonPrimary}>
-                Join the Loire Trade Network
-              </a>
-
-              {/* TODO: Replace href with the approved educational guide URL */}
-              <a href="#" className={buttonSecondary}>
-                Download the educational guide
+            <div className="mt-10">
+              <a
+                href={tradeNetworkUrl}
+                {...externalLinkProps}
+                className={buttonPrimary}
+              >
+                Join the Trade Network
               </a>
             </div>
           </div>

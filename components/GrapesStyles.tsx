@@ -4,6 +4,7 @@ import PhotoFill from "@/components/PhotoFill";
 import Reveal from "@/components/Reveal";
 import SectionContainer from "@/components/SectionContainer";
 import { grapeCards } from "@/lib/grapes";
+import { appellationListUrl, externalLinkProps } from "@/lib/site";
 import { sectionPadding, spaceEyebrowToHeadline, spaceHeadlineToBody } from "@/lib/section";
 import {
   typeDisplayLight,
@@ -31,14 +32,22 @@ export default function GrapesStyles() {
             id="grapes-heading"
             className={`${typeDisplayLight} ${spaceEyebrowToHeadline}`}
           >
-            Six expressions of one river
+            Six expressions of the river
           </h2>
           <p
             className={`max-w-3xl font-sans text-lg font-light leading-relaxed text-loire-blue-deep/90 sm:text-xl ${spaceHeadlineToBody}`}
           >
             Thirty-three grape varieties thrive across the Loire vineyards.
             These six define the identity trade professionals meet most often
-            on the shelf and on the list.
+            on the shelf and on the list.{" "}
+            <a
+              href={appellationListUrl}
+              {...externalLinkProps}
+              className="font-normal text-loire-blue underline decoration-loire-blue-pale/60 underline-offset-4 transition-colors hover:text-loire-blue-deep hover:decoration-loire-blue"
+            >
+              View the InterLoire appellation list
+            </a>{" "}
+            for appellations included in this campaign.
           </p>
         </Reveal>
 

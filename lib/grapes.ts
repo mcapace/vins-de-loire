@@ -29,7 +29,7 @@ export const grapeCards: GrapeCard[] = [
     name: "Sauvignon Blanc",
     description:
       "Crisp, mineral, and aromatic. The Loire's Sauvignon set the global benchmark for taut, food-friendly whites.",
-    heartland: "Sancerre, Pouilly-Fumé, Touraine",
+    heartland: "Touraine and campaign appellations",
     image: siteImages.grapes.sauvignon.src,
     imageAlt: siteImages.grapes.sauvignon.alt,
   },

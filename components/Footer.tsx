@@ -1,12 +1,12 @@
 import CoBrandLockup from "@/components/CoBrandLockup";
 import SectionContainer from "@/components/SectionContainer";
 import { sectionPaddingCompact } from "@/lib/section";
-import { sponsorDisclosure } from "@/lib/site";
+import { externalLinkProps, sponsorDisclosure, tradeNetworkUrl } from "@/lib/site";
 
 const footerLinks = [
   { label: "Loire Wines", href: "#" },
   { label: "Wine Spectator", href: "#" },
-  { label: "Trade Portal", href: "#trade-portal" },
+  { label: "Join the Trade Network", href: tradeNetworkUrl, external: true },
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Use", href: "#" },
 ] as const;
@@ -40,7 +40,7 @@ export default function Footer() {
         </p>
 
         <p className="mt-6 text-center text-xs leading-relaxed text-white/70 sm:text-left sm:text-sm">
-          Photography: Gaelle BC Photographe for InterLoire / Vins de Loire
+          Photography: Gaelle BC Photographe for InterLoire / Loire Wines
         </p>
 
         <nav
@@ -53,6 +53,7 @@ export default function Footer() {
                 {/* TODO: Replace placeholder href with final URLs */}
                 <a
                   href={link.href}
+                  {...("external" in link && link.external ? externalLinkProps : {})}
                   className="text-sm font-medium text-white/85 underline-offset-4 transition-colors duration-200 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   {link.label}
